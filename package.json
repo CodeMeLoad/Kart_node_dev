@@ -1,0 +1,26 @@
+{
+  "name": "KART",
+  "version": "0.1.2",
+  "description": "KART website reboot using NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.12.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lithium-03/KART"
+  },
+  "keywords": [
+    "teamkart",
+    "fsae",
+    "iit",
+    "kgp"
+  ],
+  "license": "MIT"
+}

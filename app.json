@@ -1,0 +1,7 @@
+{
+  "name": "KART",
+  "description": "KART website reboot using NodeJS",
+  "repository": "https://github.com/lithium-03/KART",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["teamkart", "fsae", "iit","kgp"]
+}
