@@ -1,6 +1,6 @@
 var rtime = new Date(1, 1, 2000, 12, 00, 00),
             timeout = false,
-            delta = 50;
+            delta = 100;
 var $contentwrapper;
 $(document).ready(function () {
     loaded = true;
@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
     });
     respond(false);
-    $contentwrapper.niceScroll();
+    //$contentwrapper.niceScroll();
     constantOffset = $contentwrapper.position().top - $('#contentblock').position().top - $('#topbar').outerHeight();
     $(function () {
         $('a[href*=#]:not([href=#])').click(function () {
