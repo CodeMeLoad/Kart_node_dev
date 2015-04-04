@@ -14,7 +14,6 @@ $(document).ready(function () {
         }
     });
     respond(false);
-    //$contentwrapper.niceScroll();
     constantOffset = $contentwrapper.position().top - $('#contentblock').position().top - $('#topbar').outerHeight();
     $(function () {
         $('a[href*=#]:not([href=#])').click(function () {
