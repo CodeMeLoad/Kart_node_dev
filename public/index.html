@@ -24,10 +24,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Monda|Signika+Negative:400|Roboto+Condensed" rel='stylesheet' type='text/css'>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.0/jquery.nicescroll.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
     <script src="/js/scripts.js"></script>
     <script src="/js/jquery.mosaicflow.min.js"></script>
     <script>
@@ -57,13 +55,13 @@
                 return;
             switch (checks) {
                 case 1:
-                    alert("Connection seems to be slow");
+                    alert("Slow connection. Failed to load content :'(");
                     break;
                 case 2:
-                    alert("This is embarassing");
+                    alert("Stop staring");
                     break;
                 case 3:
-                    alert("This is hopeless. Better check your internet connection.\nYou're not from Nehru Hall.... are you?");
+                    alert("This is hopeless. Take a few pushups.\nYou're not from Nehru Hall.... are you?");
                     break;
             }
         }
@@ -94,15 +92,16 @@
                 <li class="link" id="ls2">
                     <span>&nbsp;</span>
                     <a href="#s2">
-                        Cars
+                        Team
                     </a>
                 </li>
                 <li class="link" id="ls3">
                     <span>&nbsp;</span>
                     <a href="#s3">
-                        Team
+                        Cars
                     </a>
                 </li>
+                
                 <li class="link" id="ls4">
                     <span>&nbsp;</span>
                     <a href="#s4">
@@ -163,6 +162,59 @@
 
                 </div>
                 <div id="s2" class="contentpane-full">
+                    <a href="/team.html"><div class="content-title">The Team<span style="float:right;font-size:larger;">>></span></div></a>
+                    <div class="content">
+                        <a href="/team.html"><div class="red-text">Click to see full team structure.</div></a>
+                        <div>
+                            Formula SAE at IIT Kharagpur took a solid form in October 2008, when a group of enthusiastic students got together to form TeamKART.
+                        </div>
+                        <div>
+                            It was started up as a project under the aegis of the Sponsored Research and Industrial Consultancy Cell (SRIC) of IIT Kharagpur and under the purview of the Mechanical Department. Since then there has been a steady rise in our workforce and our potential as a team.
+                        </div>
+
+                        <div class="content-subsection">
+                            <div>
+                                <img class="content-thumb" style="width:250px;" src="/img/thumbs/b7.jpg" />
+                            </div>
+                            <div>
+                                <div>
+                                    Our journey began with our first car, the KX-1. After that we, in the span of less than 2 years, achieved the feat of competing in an international event with our second car, the K-1.
+                                    This was followed by K-2 which was lighter than all of its predecessors. K-2 was the first to participate in dynamic events, in FSAE 2013. We had our first podium in Formula Design Challenge 2015.
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                We are guided by our extremely competent faculty from the Department of Mechanical Engineering. Our faculty advisors are:
+                            </div>
+                            <div>
+                                <ul>
+                                    <li class="listitem">
+                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aXmdU">
+                                            Prof. Amiya R. Mohanty
+                                        </a>
+                                    </li>
+                                    <li class="listitem">
+                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bVmWR">
+                                            Prof. Kingshook Bhattacharyya
+                                        </a>
+                                    </li>
+                                    <li class="listitem">
+                                        <a href="http://iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aWmdU">
+                                            Prof Cheruvu S. Kumar
+                                        </a>
+                                    </li>
+                                    <li class="listitem">
+                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bamYQ">
+                                            Prof Sushanta K. Panda
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="s3" class="contentpane-full">
                     <div class="content-title">Cars</div>
                     <div class="content">
                         <div class="content-subsection">
@@ -209,72 +261,93 @@
                         </div>
                     </div>
                 </div>
-                <div id="s3" class="contentpane-full">
-                    <a href="/team.html"><div class="content-title">The Team<span style="float:right;font-size:larger;">>></span></div></a>
-                    <div class="content">
-                        <a href="/team.html"><div class="red-text">Click to see full team structure.</div></a>
-                        <div>
-                            Formula SAE at IIT Kharagpur took a solid form in October 2008, when a group of enthusiastic students got together to form TeamKART.
-                        </div>
-                        <div>
-                            It was started up as a project under the aegis of the Sponsored Research and Industrial Consultancy Cell (SRIC) of IIT Kharagpur and under the purview of the Mechanical Department. Since then there has been a steady rise in our workforce and our potential as a team.
-                        </div>
-                        
-                        <div class="content-subsection">
-                            <div>
-                                <img class="content-thumb" style="width:250px;" src="/img/thumbs/b7.jpg" />
+                
+                <div id="s4" class="contentpane-full">
+                    <a href="/spons.html">
+                        <div class="content-title">Our Partners<span style="float:right;">>></span></div>
+                    </a>
+                        <div class="content">
+                            <div class="slide_cont">
+                                <div class="slide displayed" style="background-image: url(/img/sponsors/ongc.png); transform: translate(-150%);"></div>
+                                <div class="slide displayed" style="background-image: url(/img/sponsors/hurix.png); transform: translate(-50%);"></div>
+                                <div class="slide displayed" style="background-image: url(/img/sponsors/lafarge.png); transform: translate(50%);"></div>
+                                <div class="slide" style="background-image: url(/img/sponsors/magod.png); transform: translate(-150%);"></div>
+                                <div class="slide" style="background-image: url(/img/sponsors/ni.png); transform: translate(-50%);"></div>
+                                <div class="slide" style="background-image: url(/img/sponsors/ricardo.png); transform: translate(50%); "></div>
+                                <div class="slide" style="background-image: url(/img/sponsors/pp.png); transform: translate(-150%);"></div>
+                                <div class="slide" style="background-image: url(/img/sponsors/eu.png); transform: translate(-50%);"></div>
+                                <script>
+                                    var state = 0;
+                                    $slide=$('.slide')
+                                    window.setInterval(function () {
+                                        $($slide[state]).animate({ 'opacity': '1' }, 500);
+                                        for (i = 0; $slide[i]; i++)
+                                        {
+                                            if(i%3==state%3&&i!=state)
+                                            {
+                                                $($slide[i]).animate({ 'opacity': '0' }, 500);
+                                                i += 2;
+                                            }
+                                        }
+                                        state++;
+                                        state = state % 8;
+                                    }, 1000);
+                                </script>
                             </div>
                             <div>
-                                <div>
-                                    Our journey began with our first car, the KX-1. After that we, in the span of less than 2 years, achieved the feat of competing in an international event with our second car, the K-1.
-                                    This was followed by K-2 which was lighter than all of its predecessors. K-2 was the first to participate in dynamic events, in FSAE 2013. We had our first podium in Formula Design Challenge 2015.
-                                </div>
+                                TeamKART is always on the lookout for new partners who can help the project. We always highlight our corporte sponsors and express our gratitude via the media.
+                            </div>
+                            <div>
+                                Its not only our public outreach that we bring to the table, sponsoring us also provides access to skilled young talent pool.
+                                TeamKART enables members to gain tremendous technical and practical know-how of the field and also fosters teamwork, organization and project management.
+                            </div>
+                            For more information, please contact us.
+                        </div>
+                    <div>
+                        <div class="namebox">
+                            <div class="dp">
+                                <img src="/img/team/VisheshKapoor_150.jpg" width="100" height="100">
+                            </div>
+                            <div class="info">
+                                Vishesh Kapoor<br />
+                                Team Leader<br />
+                                <a class="mail" href="skype:+919547619069?call">+91-9547619069</a><br>
+                                <a class="mail" target="_blank" href="mailto:visheshvipul@gmail.com">visheshvipul@gmail.com</a>
                             </div>
                         </div>
-                        <div>
-                            <div>
-                                We are guided by our extremely competent faculty from the Department of Mechanical Engineering. Our faculty advisors are:
+                        <div class="namebox">
+                            <div class="dp">
+                                <img src="/img/team/SarthakJain_150.jpg" width="100" height="100">
                             </div>
-                            <div>
-                                <ul>
-                                    <li class="listitem">
-                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aXmdU">
-                                            Prof. Amiya R. Mohanty
-                                        </a>
-                                    </li>
-                                    <li class="listitem">
-                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bVmWR">
-                                            Prof. Kingshook Bhattacharyya
-                                        </a>
-                                    </li>
-                                    <li class="listitem">
-                                        <a href="http://iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aWmdU">
-                                            Prof Cheruvu S. Kumar
-                                        </a>
-                                    </li>
-                                    <li class="listitem">
-                                        <a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bamYQ">
-                                            Prof Sushanta K. Panda
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="info">
+                                Sarthak Jain<br />
+                                <a class="mail" href="skype:+91-8967688708?call">+91-8967688708</a><br>
+                                <a class="mail" target="_blank" href="mailto:sarthakjain939@gmail.comm">sarthakjain939@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="namebox">
+                            <div class="dp">
+                                <img src="/img/team/Yash_Kariwal_150.jpg" width="100" height="100">
+                            </div>
+                            <div class="info">
+                                Yash Kariwal<br />
+                                Corporate and Public Relations<br />
+                                <a class="mail" href="skype:+91-7872834599?call">+91-7872834599</a><br>
+                                <a class="mail" target="_blank" href="mailto:yash15kariwal@gmail.com">yash15kariwal@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp">
+                                <img src="/img/team/Ketan_150.jpg" width="100" height="100">
+                            </div>
+                            <div class="info">
+                                Ketan Mundhra<br />
+                                <a class="mail" href="skype:+919775881167?call">+91-9775881167</a><br>
+                                <a class="mail" target="_blank" href="mailto:ketanmundhra95@gmail.com">ketanmundhra95@gmail.com</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="s4" class="contentpane-full">
-                    <a href="/spons.html">
-                        <div class="content-title">Our Partners</div>
-                        <div class="content">
-                            <div class="content">
-                                TeamKART is always on the lookout for new partners who can help the project. With the advent of F1 the popularity of formula racing in India is treading an exponential curve, making the media take note of TeamKART more and more. We always try to highlight our relationship with the sponsors and express our gratitude via the same media.
-                                But its not only our public outreach that we bring to the table, sponsoring us also provides access to highly motivated and skilled potential employees. Our members make it possible to take the car from the drawing board to the race track. Being part of TeamKART not only helps members to gain tremendous technical and practical know-how of the field but also familiarize them with team work, organization and project management, giving them an edge over other graduates.
-
-                                Also association with a student led research project helps boost the image of any company.
-                                If you feel interested in the idea of partnering with us, please contact us.
-                            </div>
-                        </div>
-                    </a>
                 </div>
                 <div id="s5" class="contentpane-full">
                     <div class="content-title">Gallery</div>
