@@ -78,7 +78,7 @@ body
     font-family: 'Monda', sans-serif;
     color:white;
     display:inline;
-    font-size:18px;
+    font-size:large;
     white-space:nowrap;
 }
 .listitem
@@ -213,7 +213,7 @@ a
 .content-title
 {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size:30px;
+    font-size:x-large;
     color:darkkhaki;
     border-bottom:1px solid #B8363A;
     padding-bottom:5px;
@@ -224,7 +224,7 @@ a
 }
 .contentpane-half>.content-title
 {
-    font-size:22px;
+    font-size:larger;
     color:#ed5353;
 }
 .no-shadow
@@ -240,7 +240,7 @@ a
     margin-top:20px;
     background-color:#5c5c5c;
 }
-a.mail
+a.mail,a.phone
 {
     text-decoration: none !important;
     color: #CBCBCB;
@@ -258,11 +258,12 @@ a.mail
     background-color: #403b3b;
     display:inline-block;
     margin:10px;
+    overflow:hidden;
 }
-.dp 
+.dp,.dp>img
 {
     width: 100px;
-    height :100px;
+    height:100px;
     float: left;
 }
 .info 

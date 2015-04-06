@@ -88,64 +88,51 @@
                 line-height: 22px;
             }
         </style>
-
+        <script>
+                    function populate() {
+                        $phone = Array($('.phone'));
+                        $mail = Array($('.mail'));
+                        $phone.forEach(function (ele, index, array) {
+                            $(ele).attr('href', "skype:" + $(ele).html() + '?call');
+                        });
+                        $mail.forEach(function (ele, index, array) {
+                            $(ele).attr('href', "mailto:" + $(ele).html());
+                            $(ele).attr('target', "_blank");
+                        });
+                    }
+                    $(document).ready(populate);
+        </script>
         <div id="contentblock">
-            <div id="s1" class="contentpane-full">
-                <div class="content-title">
-                    Page Under Construction
-                </div>
-                <div class="content">
-                   :( <div onclick="history.go(-1);"><a>Just take me home.</a></div>
-                </div>
-            </div>
             <div id="s1" class="contentpane-full">
                 <div class="content-title">
                     Team Heads
                 </div>
                 <div class="content">
-                    <div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img width="100" height="100" src="/img/team/VisheshKapoor_150.jpg">
-                            </div>
-                            <div class="info">
-                                Vishesh Kapoor
-                                <br />
-                                Team Leader
-                                <br />
-                                <a class="mail" href="skype:+919547619069?call">+91-9547619069</a>
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:visheshvipul@gmail.com">visheshvipul@gmail.com</a>
-                            </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/VisheshKapoor_150.jpg"></div>
+                        <div class="info">
+                            <div>Vishesh Kapoor</div>
+                            <div>Team Leader</div>
+                            <a class="phone">+91-9547619069</a>
+                            <a class="mail">visheshvipul@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/Anubhavgoyal_150.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Anubhav Goyal
-                                <br>
-                                Team Manager
-                                <br>
-                                <a class="mail" href="skype:+91-8101450705?call">+91-8101450705</a>
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:anubhavg94@gmail.com">anubhavg94@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Anubhavgoyal_150.jpg"></div>
+                        <div class="info">
+                            <div>Anubhav Goyal</div>
+                            <div>Team Manager</div>
+                            <a class="phone">+91-8101450705</a>
+                            <a class="mail">anubhavg94@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/Akhilesh_Gogikar_150.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Akhilesh Gogikar
-                                <br>
-                                Team Manager
-                                <br>
-                                <a class="mail" href="skype:+91-9002305646?call">+91-9002305646</a>
-
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:gogikar.akhilesh@gmail.com">gogikar.akhilesh@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Akhilesh_Gogikar_150.jpg"></div>
+                        <div class="info">
+                            <div>Akhilesh Gogikar</div>
+                            <div>Team Manager</div>
+                            <a class="phone">+91-9002305646</a>
+                            <a class="mail">gogikar.akhilesh@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -155,110 +142,76 @@
                     Team Mentors
                 </div>
                 <div class="content">
-                    <div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/jalan-150x150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Aditya Jalan
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8116456566
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:adijalan13@gmail.com">adijalan13@gmail.com</a>
-                            </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/jalan-150x150.jpg"></div>
+                        <div class="info">
+                            <div>Aditya Jalan</div>
+                            <a class="phone">+91-8116456566</a>
+                            <a class="mail">adijalan13@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/baveja.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Akshat Baveja
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8348522927
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:akshatbaveja@gmail.com">akshatbaveja@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp">
+                            <img src="/img/team/baveja.jpg">
                         </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/akshay.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Akshay Singh
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8348522862
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:akshaysingh.93@gmail.com">akshaysingh.93@gmail.com</a>
-                            </div>
+                        <div class="info">
+                            <div>Akshat Baveja</div>
+                            <a class="phone">+91-8348522927</a>
+                            <a class="mail">akshatbaveja@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/apurv-150x150.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Apurv Jain
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8436974367
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:apurvchhajed@gmail.com">apurvchhajed@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/akshay.jpg"></div>
+                        <div class="info">
+                            <div>Akshay Singh</div>
+                            <a class="phone">+91-8348522862</a>
+                            <a class="mail">akshaysingh.93@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/sidhu.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Gursevak Singh Sidhu
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-9547057222
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:sidhusingh1991@gmail.com">sidhusingh1991@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp">
+                            <img src="/img/team/apurv-150x150.jpg">
                         </div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/shanu.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Kumar Shanu
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8509055355
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:shanu.iitkgp@gmail.com">shanu.iitkgp@gmail.com</a>
-                            </div>
+                        <div class="info">
+                            <div>Apurv Jain</div>
+                            <a class="phone">+91-8436974367</a>
+                            <a class="mail">apurvchhajed@gmail.com</a>
                         </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/confused.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Pruthesh Chiddarwar
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-9475553791
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:pruthesh.iitkgp@gmail.com">pruthesh.iitkgp@gmail.com</a>
-                            </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp">
+                            <img src="/img/team/sidhu.jpg">
                         </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/sriram.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Sriram Sridharan
-                                <br>
-                                Team Mentor
-                                <br>
-                                +91-8001624279
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:sriramsridharan001@gmail.com">sriramsridharan001@gmail.com</a>
-                            </div>
+                        <div class="info">
+                            <div>Gursevak Singh Sidhu</div>
+                            <a class="phone">+91-9547057222</a>
+                            <a class="mail">sidhusingh1991@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp">
+                            <img src="/img/team/shanu.jpg">
+                        </div>
+                        <div class="info">
+                            <div>Kumar Shanu</div>
+                            <a class="phone">+91-8509055355</a>
+                            <a class="mail">shanu.iitkgp@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/confused.jpg"></div>
+                        <div class="info">
+                            <div>Pruthesh Chiddarwar</div>
+                            <a class="phone">+91-9475553791</a>
+                            <a class="mail">pruthesh.iitkgp@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/sriram.jpg"></div>
+                        <div class="info">
+                            <div>Sriram Sridharan</div>
+                            <a class="phone">+91-8001624279</a>
+                            <a class="mail">sriramsridharan001@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -268,102 +221,72 @@
                     Chassis and Aerodynamics
                 </div>
                 <div class="content">
-                    <div>
-                        <div class="namebox">
-                            <div class="dp">
-                                <img src="/img/team/Akhilesh_Gogikar_150.jpg" width="100" height="100">
-                            </div>
-                            <div class="info">
-                                Akhilesh Gogikar
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-9002305646
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:gogikar.akhilesh@gmail.com">gogikar.akhilesh@gmail.com</a>
-                            </div>
-
+                    <div class="namebox">
+                        <div class="dp">
+                            <img src="/img/team/Akhilesh_Gogikar_150.jpg">
                         </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Anubhavgoyal_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Anubhav Goyal
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-8101450705
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:anubhavg94@gmail.com">anubhavg94@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/SarthakJain_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Sarthak Jain
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-8967688708
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:sarthakjain939@gmail.com">sarthakjain939@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Ketan_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Ketan Mundhra
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-9775881167
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:ketanmundhra95@gmail.com">ketanmundhra95@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/yoursTruly_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Nidhin N
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-7585965842
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:nidhin.m3gtr@gmail.com">nidhin.m3gtr@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Tayal_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Ojas Tayal
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-7872685327
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:ojas.tayal95@gmail.com">ojas.tayal95@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Tayal_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Ojas Tayal
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-7872685327
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:ojas.tayal95@gmail.com">ojas.tayal95@gmail.com</a>
-                            </div>
-
+                        <div class="info">
+                            <div>Akhilesh Gogikar</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-9002305646</a>
+                            <a class="mail">gogikar.akhilesh@gmail.com</a>
                         </div>
                     </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Anubhavgoyal_150.jpg"></div>
+                        <div class="info">
+                            <div>Anubhav Goyal</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-8101450705</a>
+                            <a class="mail">anubhavg94@gmail.com</a>
+                        </div>
 
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/SarthakJain_150.jpg"></div>
+                        <div class="info">
+                            <div>Sarthak Jain</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-8967688708</a>
+                            <a class="mail">sarthakjain939@gmail.com</a>
+                        </div>
+
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Ketan_150.jpg"></div>
+                        <div class="info">
+                            <div>Ketan Mundhra</div>
+                            <a class="phone">+91-9775881167</a>
+                            <a class="mail">ketanmundhra95@gmail.com</a>
+                        </div>
+
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/yoursTruly_150.jpg"></div>
+                        <div class="info">
+                            <div>Nidhin N</div>
+                            <a class="phone">+91-7585965842</a>
+                            <a class="mail">nidhin.m3gtr@gmail.com</a>
+                        </div>
+
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Tayal_150.jpg"></div>
+                        <div class="info">
+                            <div>Ojas Tayal</div>
+                            <a class="phone">+91-7872685327</a>
+                            <a class="mail">ojas.tayal95@gmail.com</a>
+                        </div>
+
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/zaid.jpg"></div>
+                        <div class="info">
+                            <div>Zaid Parvez</div>
+                            <a class="phone">+91-9800128226</a>
+                            <a class="mail">zaidparvez2010@gmail.com</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="s4" class="contentpane-full">
@@ -373,95 +296,80 @@
                 <div class="content">
                     <div>
                         <div class="namebox">
-                            <div class="dp"><img src="/img/team/Arjun_150.jpg" width="100" height="100"></div>
+                            <div class="dp"><img src="/img/team/Arjun_150.jpg"></div>
                             <div class="info">
-                                Arjun Deshmukh
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-9002282104
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:darjun94@gmail.com">darjun94@gmail.com</a>
+                                <div>Arjun Deshmukh</div>
+                                <div>Subsystem Head</div>
+                                <a class="phone">+91-9002282104</a>
+                                <a class="mail">darjun94@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/S_Roshan_Kumar_150.jpg"></div>
+                            <div class="info">
+                                <div>S Roshan Kumar</div>
+                                <div>Subsystem Head</div>
+                                <a class="phone">+91-7548082637</a>
+                                <a class="mail">satapathy.roshan@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/Vivek_Narsaria_150.jpg"></div>
+                            <div class="info">
+                                <div>Vivek Narsaria</div>
+                                <div>Subsystem Head</div>
+                                <a class="phone">+91-9002273355</a>
+                                <a class="mail">vnarsaria01@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/shubham_kedia_150.jpg"></div>
+                            <div class="info">
+                                <div>Shubham Kedia</div>
+                                <a class="phone">+91-9564440502</a>
+                                <a class="mail">shubham.kd2010@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/Arnab_150.jpg"></div>
+                            <div class="info">
+                                <div>Arnab Biswas</div>
+                                <a class="phone">+91-9038866088</a>
+                                <a class="mail">rik.arnab.26@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/protic.jpg"></div>
+                            <div class="info">
+                                <div>Pratik Roy</div>
+                                <a class="phone">+91-7797436488</a>
+                                <a class="mail">pratikraja08@outlook.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/sameer.jpg"></div>
+                            <div class="info">
+                                <div>Samir Shekhar</div>
+                                <a class="phone">+91-9800916688</a>
+                                <a class="mail">sameershekhar66@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="dp"><img src="/img/team/Sumit_Gupta_150.jpg"></div>
+                            <div class="info">
+                                <div>Sumit Gupta</div>
+                                <a class="phone">+91-9635456246</a>
+                                <a class="mail">sumitguptaiitkgp@gmail.com</a>
                             </div>
 
                         </div>
                         <div class="namebox">
-                            <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/S_Roshan_Kumar_150.jpg" width="100" height="100"></div>
+                            <div class="dp"><img src="/img/team/Sushant_150.jpg"></div>
                             <div class="info">
-                                S Roshan Kumar
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-7548082637
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:satapathy.roshan@gmail.com">satapathy.roshan@gmail.com</a>
+                                <div>Sushant Ayinapurapu</div>
+                                <a class="phone">+91-9800193887</a>
+                                <a class="mail">sushant.ayinapurapu@gmail.com</a>
                             </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/shubham_kedia_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Shubham Kedia
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-9564440502
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:shubham.kd2010@gmail.com">shubham.kd2010@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Arnab_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Arnab Biswas
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-9038866088
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:rik.arnab.26@gmail.com">rik.arnab.26@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/Vivek_Narsaria_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Vivek Narsaria
-                                <br>
-                                Subsystem Head
-                                <br>
-                                +91-9002273355
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:vnarsaria01@gmail.com">vnarsaria01@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Sumit_Gupta_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Sumit Gupta
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-9635456246
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:sumitguptaiitkgp@gmail.com">sumitguptaiitkgp@gmail.com</a>
-                            </div>
-
-                        </div>
-                        <div class="namebox">
-                            <div class="dp"><img src="/img/team/Sushant_150.jpg" width="100" height="100"></div>
-                            <div class="info">
-                                Sushant Ayinapurapu
-                                <br>
-                                Subsystem Member
-                                <br>
-                                +91-9800193887
-                                <br>
-                                <a class="mail" target="_blank" href="mailto:sushant.ayinapurapu@gmail.com">sushant.ayinapurapu@gmail.com</a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -472,299 +380,239 @@
                 </div>
                 <div class="content">
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Aman_Kumar_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Aman_Kumar_150.jpg"></div>
                         <div class="info">
-                            Aman Kumar
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-8343997155
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:amankishu4@gmail.com">amankishu4@gmail.com</a>
+                            <div>Aman Kumar</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-8343997155</a>
+                            <a class="mail">amankishu4@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/VisheshKapoor_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/VisheshKapoor_150.jpg"></div>
                         <div class="info">
-                            Vishesh Kapoor
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-9547619069
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:visheshvipul@gmail.com">visheshvipul@gmail.com</a>
+                            <div>Vishesh Kapoor</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-9547619069</a>
+                            <a class="mail">visheshvipul@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/hussain_bohra_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/hussain_bohra_150.jpg"></div>
                         <div class="info">
-                            Hussain Bohra
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-9679381747
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:hussain52b@gmail.com">hussain52b@gmail.com</a>
+                            <div>Hussain Bohra</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-9679381747</a>
+                            <a class="mail">hussain52b@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/MaulikGoyal_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/MaulikGoyal_150.jpg"></div>
                         <div class="info">
-                            Maulik Goyal
-                            <br>
-                            Subsystem Member
-                            <br>
-                            +91-7797436323
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:goyalmaulik@gmail.com">goyalmaulik@gmail.com</a>
+                            <div>Maulik Goyal</div>
+                            <a class="phone">+91-7797436323</a>
+                            <a class="mail">goyalmaulik@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Abhimanyu_Das_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Abhimanyu_Das_150.jpg"></div>
                         <div class="info">
-                            Abhimanyu Das
-                            <br>
-                            Subsystem Member
-                            <br>
-                            +91-7872687420
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:manyunov@gmail.com">manyunov@gmail.com</a>
+                            <div>Abhimanyu Das</div>
+                            <a class="phone">+91-7872687420</a>
+                            <a class="mail">manyunov@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                 </div>
             </div>
-            <div id="s5" class="contentpane-full">
+            <div id="s6" class="contentpane-full">
                 <div class="content-title">
                     Transmission
                 </div>
                 <div class="content">
-
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Apurv_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Apurv_150.jpg"></div>
                         <div class="info">
-                            Apurv Shukla
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-7076607364
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:apurv3894@gmail.com">apurv3894@gmail.com</a>
+                            <div>Apurv Shukla</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-7076607364</a>
+                            <a class="mail">apurv3894@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/ParimalParth_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Mockingjay.jpg"></div>
                         <div class="info">
-                            Parimal Parth Sarathi
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-7586812910
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:parimalparthsarathi@gmail.com">parimalparthsarathi@gmail.com</a>
+                            <div>Jay Dixit</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-9735709373</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Shaurya_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/ParimalParth_150.jpg"></div>
                         <div class="info">
-                            Shauryaveer Singh
-                            <br>
-                            Subsystem Member
-                            <br>
-                            +91-8609265681
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:shauryaveer95@gmail.com">shauryaveer95@gmail.com</a>
+                            <div>Parimal Parth Sarathi</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-7586812910</a>
+                            <a class="mail">parimalparthsarathi@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Modivala_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Shaurya_150.jpg"></div>
                         <div class="info">
-                            Siraj Modiwala
-                            <br>
-                            Subsystem Member
-                            <br>
-                            +91-7872837472
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:cj.siraj07@gmail.com">cj.siraj07@gmail.com</a>
+                            <div>Shauryaveer Singh</div>
+                            <a class="phone">+91-8609265681</a>
+                            <a class="mail">shauryaveer95@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/cic-unnamed-source-is-the-stig.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/nirav.jpg"></div>
                         <div class="info">
-                            Jay Dixit
-                            <br>
-                            Subsystem Head
-                            <br>
-                            +91-9735709373
-                            <p></p>
-                            <div></div>
-                            <p></p>
+                            <div>Nirav Doshi</div>
+                            <a class="phone">+91-9800197945</a>
+                            <a class="mail">niravdoshi95@gmail.com</a>
                         </div>
-                        <p></p>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/pneumatic.jpg"></div>
+                        <div class="info">
+                            <div>Rohan Lohia</div>
+                            <a class="phone">+91-7872846690</a>
+                            <a class="mail">rohan.r.lohia@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="dp"><img src="/img/team/Modivala_150.jpg"></div>
+                        <div class="info">
+                            <div>Siraj Modiwala</div>
+                            <a class="phone">+91-7872837472</a>
+                            <a class="mail">cj.siraj07@gmail.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="s5" class="contentpane-full">
+            <div id="s7" class="contentpane-full">
                 <div class="content-title">
                     Electronics
                 </div>
                 <div class="content">
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Aman_Kumar_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Aman_Kumar_150.jpg"></div>
                         <div class="info">
-                            Aman Kumar<br>
-                            Subsystem Head<br>
-                            +91-8343997155<br>
-                            <a class="mail" target="_blank" href="mailto:amankishu4@gmail.com">amankishu4@gmail.com</a>
+                            <div>Aman Kumar</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-8343997155</a>
+                            <a class="mail">amankishu4@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" id="vishnu" src="/img/team/VishnuMohan_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/manik.jpg"></div>
                         <div class="info">
-                            Vishnu Mohan<br>
-                            Subsystem Member<br>
-                            +91-7872683562<br>
-                            <a class="mail" target="_blank" href="mailto:vishnu.mohan1995@gmail.com">vishnu.mohan1995@gmail.com</a>
+                            <div>Manik Sood</div>
+                            <div>Subsystem Head</div>
+                            <a class="phone">+91-9002319501</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Anshul_Gupta_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/VishnuMohan_150.jpg"></div>
                         <div class="info">
-                            Anshul Gupta<br>
-                            Subsystem Member<br>
-                            +91-8101573117<br>
-                            <a class="mail" target="_blank" href="mailto:megaanshulgupta96@gmail.com">megaanshulgupta96@gmail.com</a>
+                            <div>Vishnu Mohan</div>
+                            <a class="phone">+91-7872683562</a>
+                            <a class="mail">vishnu.mohan1995@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/cic-unnamed-source-is-the-stig.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Anshul_Gupta_150.jpg"></div>
                         <div class="info">
-                            Siddharth Kumar Singh<br>
-                            Subsystem Member<br>
-                            +91-9933879559<br>
-                            deserteagle29b@gmail.com
+                            <div>Anshul Gupta</div>
+                            <a class="phone">+91-8101573117</a>
+                            <a class="mail">megaanshulgupta96@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/cic-unnamed-source-is-the-stig.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/silent_stud.jpg"></div>
                         <div class="info">
-                            Manik Sood<br>
-                            Subsystem Head<br>
-                            +91-9002319501<p></p>
-                            <div></div>
-                            <p></p>
+                            <div>Siddharth Kumar Singh</div>
+                            <a class="phone">+91-9933879559</a>
+                            <a class="mail">deserteagle29b@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                 </div>
             </div>
-            <div id="s5" class="contentpane-full">
+            <div id="s8" class="contentpane-full">
                 <div class="content-title">
                     Corporate and Public Relations
                 </div>
                 <div class="content">
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Anubhav_Singh_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Anubhav_Singh_150.jpg"></div>
                         <div class="info">
-                            Anubhav Singh<br>
-                            CPR Team Member<br>
-                            +91-9679895582<br>
-                            <a class="mail" target="_blank" href="mailto:anubhavmfkgp@gmail.com">anubhavmfkgp@gmail.com</a>
+                            <div>Anubhav Singh</div>
+                            <a class="phone">+91-9679895582</a>
+                            <a class="mail">anubhavmfkgp@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/S_Abdul_Azeem__150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/S_Abdul_Azeem__150.jpg"></div>
                         <div class="info">
-                            S Abdul Azeem<br>
-                            CPR Team Member<br>
-                            +91-9800140801<p></p>
-                            <div>&nbsp;</div>
-                            <p></p>
+                            <div>S Abdul Azeem</div>
+                            <a class="phone">+91-9800140801</a>
+                            <a class="mail">azeem.az.19@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/SaurabhGuha_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/SaurabhGuha_150.jpg"></div>
                         <div class="info">
-                            Saurabh Guha<br>
-                            CPR Team Member<br>
-                            +91-8016280462<br>
-                            <a class="mail" target="_blank" href="mailto:sguha.fb@gmail.com">sguha.fb@gmail.com</a>
+                            <div>Saurabh Guha</div>
+                            <a class="phone">+91-8016280462</a>
+                            <a class="mail">sguha.fb@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-thumbnail wp-image-239" src="/img/team/Vyom_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Vyom_150.jpg"></div>
                         <div class="info">
-                            Vyom Shrivastava<br>
-                            CPR Team Member<br>
-                            +91-8609266433<br>
-                            <a class="mail" target="_blank" href="mailto:mr.vyomshrivastava@gmail.com">mr.vyomshrivastava@gmail.com</a>
+                            <div>Vyom Shrivastava</div>
+                            <a class="phone">+91-8609266433</a>
+                            <a class="mail">mr.vyomshrivastava@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/Yash_Kariwal_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/Yash_Kariwal_150.jpg"></div>
                         <div class="info">
-                            Yash Kariwal<br>
-                            CPR Team Member<br>
-                            +91-7872834599<br>
-                            <a class="mail" target="_blank" href="mailto:yash15kariwal@gmail.com">yash15kariwal@gmail.com</a>
+                            <div>Yash Kariwal</div>
+                            <a class="phone">+91-7872834599</a>
+                            <a class="mail">yash15kariwal@gmail.com</a>
                         </div>
-                        <p></p>
+
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/cic-unnamed-source-is-the-stig.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/inderpreet.jpg"></div>
                         <div class="info">
-                            Inderpreet Kaur<br>
-                            CPR Team Member<br>
-                            +91-8927726331<br>
-                            indr.preet15@gmail.com
+                            <div>Inderpreet Kaur</div>
+                            <a class="phone">+91-8927726331</a>
+                            <a class="mail">indr.preet15@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                     <div class="namebox">
-                        <div class="dp"><img class="alignleft size-full wp-image-241" src="/img/team/cic-unnamed-source-is-the-stig.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/shivasish.jpg"></div>
                         <div class="info">
-                            Kumar Shivashish<br>
-                            CPR Team Member<br>
-                            +91-9800170318<br>
-                            k.shivashish7@gmail.com
+                            <div>Kumar Shivashish</div>
+                            <a class="phone">+91-9800170318</a>
+                            <a class="mail">k.shivashish7@gmail.com</a>
                         </div>
-                        <p></p>
                     </div>
                 </div>
             </div>
-            <div id="s5" class="contentpane-full">
+            <div id="s9" class="contentpane-full">
                 <div class="content-title">
                     Web Design
                 </div>
                 <div class="content">
                     <div class="namebox">
-                        <div class="dp"><img src="/img/team/yoursTruly_150.jpg" width="100" height="100"></div>
+                        <div class="dp"><img src="/img/team/yoursTruly_150.jpg"></div>
                         <div class="info">
-                            Nidhin N
-                            <br>
-                            Subsystem Member
-                            <br>
-                            +91-7585965842
-                            <br>
-                            <a class="mail" target="_blank" href="mailto:nidhin.m3gtr@gmail.com">nidhin.m3gtr@gmail.com</a>
+                            <div>Nidhin N</div>
+                            <a class="phone">+91-7585965842</a>
+                            <a class="mail">nidhin.m3gtr@gmail.com</a>
                         </div>
-
                     </div>
                 </div>
             </div>
