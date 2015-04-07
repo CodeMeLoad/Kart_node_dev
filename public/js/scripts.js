@@ -14,6 +14,9 @@ $(document).ready(function () {
         }
     });
     respond(false);
+    if ($.mosaicflow)
+        $('#gallery').mosaicflow();
+    waypointInit(sections);
     constantOffset = $contentwrapper.position().top - $('#contentblock').position().top - $('#topbar').outerHeight();
     $(function () {
         $('a[href*=#]:not([href=#])').click(function () {
@@ -33,9 +36,6 @@ $(document).ready(function () {
             }
         });
     });
-    if ($.mosaicflow)
-        $('#gallery').mosaicflow();
-    waypointInit(sections);
 });
 function waypointInit(n,$target) 
 {
