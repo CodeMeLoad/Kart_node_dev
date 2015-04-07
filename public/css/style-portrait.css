@@ -36,13 +36,18 @@ body
 ._team
 {
     font-family:pirulen;
-    font-size:35px;
+    font-size:42px;
     color:#FFF;
+}
+#line1
+{
+    width:100%;
+    background-color:black;
 }
 ._kart
 {
     font-family:blade;
-    font-size:60px;
+    font-size:72px;
     color:#B8363A;
 }
 .red-text
@@ -53,10 +58,7 @@ body
 {
     padding:5px;
     background-color:#000;
-}
-#sandwitch-button
-{
-    display:none;
+    display:inline-block;
 }
 .logo>div
 {
@@ -69,11 +71,11 @@ body
 }
 .link
 {
-    border-left:1px solid black;
+    border-bottom:1px solid black;
     font-family: 'Monda', sans-serif;
     color:white;
-    display:inline;
-    font-size:large;
+    display:block;
+    font-size:23px;
     white-space:nowrap;
 }
 .listitem
@@ -82,6 +84,26 @@ body
     position:relative;
     left:20px;
 }
+#sandwitch-button
+{
+    width:42px;
+    height:42px;
+    display:inline-block;
+    border-radius:8px;
+    border:2px;
+    border-style:solid;
+    border-color: white;
+    float:right;
+    margin:20px;
+}
+#sandwitch-button>div
+{
+    border:2px;
+    border-style:solid;
+    border-color:white;
+    height:0px;
+    margin:7px;
+}
 a
 {
     color:white;
@@ -89,8 +111,8 @@ a
 }
 .link>a
 {
-    margin-left:2px;
-    margin-right:2px;
+    margin-left:4px;
+    margin-right:4px;
     padding-left:3px;
     padding-right:3px;
 }
@@ -109,6 +131,7 @@ a
 {
     background-color:#B8363A;
     padding:3px;
+    display:none;
 }
 .social_img
 {
@@ -160,11 +183,9 @@ a
 }
 #contentblock
 {
-    width:65%;
-    margin-left:auto;
-    margin-right:auto;
-    padding-left:5px;
-    padding-right:5px;
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
     color:white;
 }
 .contentpane-full,.contentpane-full-sub,.contentpane-bounded
@@ -179,10 +200,6 @@ a
     margin-left:auto;
     margin-right:auto;
     background-color:#403b3b;
-}
-.contentpane-bounded
-{
-    height:180px;
 }
 .content
 {

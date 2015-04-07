@@ -3,6 +3,7 @@ var rtime = new Date(1, 1, 2000, 12, 00, 00),
             delta = 100;
 var $contentwrapper;
 $(document).ready(function () {
+    window.scrollTo(0, 1);
     loaded = true;
     $contentwrapper = $('#contentwrapper');
     var lineHeight = parseInt($(document.getElementsByClassName('content')[0]).css('line-height'));
