@@ -1,19 +1,12 @@
 var rtime = new Date(1, 1, 2000, 12, 00, 00),
             timeout = false,
-            delta = 100;
+            delta = 0;
 var $contentwrapper;
 $(document).ready(function () {
-    window.scrollTo(0, 1);
     loaded = true;
     $contentwrapper = $('#contentwrapper');
     var lineHeight = parseInt($(document.getElementsByClassName('content')[0]).css('line-height'));
-    $(window).bind('orientationchange resize', function () {
-        rtime = new Date();
-        if (timeout === false) {
-            timeout = true;
-            window.setTimeout(readyrespond, delta);
-        }
-    });
+    $(window).bind('orientationchange resize', function () { respond(true) });
     respond(false);
     if ($.mosaicflow)
         $('#gallery').mosaicflow();
@@ -24,7 +17,7 @@ $(document).ready(function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                dist = target.position().top + $contentwrapper.scrollTop() + constantOffset-5
+                dist = target.position().top + $contentwrapper.scrollTop() + constantOffset
                 if (target.length && dist) {
                     $contentwrapper.animate(
                         {
@@ -43,45 +36,6 @@ function waypointInit(n,$target)
     if (!n)
         return;
     $target = $target == undefined ? $('.contentpane-full,.contentpane-full-sub') : $target;
-    $target.waypoint(
-        {
-            handler:
-                function (direction) 
-                {
-                    if ($(this).hasClass('nohide'))
-                        return;
-                    if (direction === 'down')
-                    {
-                        $(this).animate({ 'opacity': '0' }, 700);
-                    }
-                    else 
-                    {
-                        $(this).animate({ 'opacity': '1' }, 700);
-                    }
-                },
-            context: '#contentwrapper',
-            offset: function () {
-                return (2.5 * parseInt($('.content').css('line-height')) - $(this).outerHeight());
-            }
-        });
-    $target.waypoint(
-        {
-            handler:
-                function (direction)
-                {
-                    if ($(this).hasClass('nohide'))
-                        return;
-                        if (direction === 'down') {
-                            $(this).animate({ 'opacity': '1' }, 700);
-                        }
-
-                        else {
-                            $(this).animate({ 'opacity': '0' }, 700);
-                        }
-                    },
-                context: '#contentwrapper',
-                offset: '90%'
-            });
     $target.waypoint(
             {
                 handler:
@@ -112,14 +66,5 @@ function respond(t) {
     {
         waypointDestroy(sections);
         waypointInit(sections);
-    }
-}
-function readyrespond() {
-    if (new Date() - rtime < delta) {
-        setTimeout(readyrespond, delta);
-    }
-    else {
-        timeout = false;
-        respond(true);
     }
 }
