@@ -89,15 +89,13 @@
         </style>
         <script>
             function populate() {
-                $phone = Array($('.phone'));
-                $mail = Array($('.mail'));
-                $phone.forEach(function (ele) {
-                    $(ele).attr('href', "tel:" + $(ele).html().trim());
-                });
-                $mail.forEach(function (ele) {
-                    $(ele).attr('href', "mailto:" + $(ele).html().trim());
-                    $(ele).attr('target', "_blank");
-                });
+                $phone = $('.phone');
+                $mail = $('.mail');
+                for (i = 0; $phone[i]||$mail[i]; i++) {
+                    $($phone[i]).attr('href', 'tel:' + $phone[i].innerHTML)
+                    $($mail[i]).attr('href', 'mailto:' + $mail[i].innerHTML)
+                    $($mail[i]).attr('target', '_blank')
+                }
             }
             $(document).ready(populate);
         </script>
