@@ -1,373 +1,352 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>TeamKART - Formula SAE Team of IIT Kharagpur</title>
-    <meta charset="utf-8" />
-    <meta property="og:title" content="TeamKART - Formula SAE Team of IIT Kharagpur" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="//www.teamkart.in/" />
-    <meta property="og:image" content="//lithium-03.github.io/teamkart/img/thumbnail.png" />
-    <meta property="og:site_name" content="TeamKART" />
-    <meta property="fb:admins" content="lithium-03.nidhin" />
-    <meta property="og:description" content="Kharagpur Automobile Racing Team, better known as TeamKART is a group of students  from IIT Kharagpur who like to explore the practical side of automotive engineering.Team KART is officially a sponsored research project under the Sponsored Research and Industrial consultancy Cell (SRIC) and the department of Mechanical Engineering, IIT Kharagpur." />
-    <meta name="author" content="Nidhin">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@nidhin_iitkgp">
-    <meta name="twitter:title" content="TeamKART - Formula SAE Team of IIT Kharagpur">
-    <meta name="twitter:description" content="Kharagpur Automobile Racing Team, better known as TeamKART is a group of students  from IIT Kharagpur who like to explore the practical side of automotive engineering.Team KART is officially a sponsored research project under the Sponsored Research and Industrial consultancy Cell (SRIC) and the department of Mechanical Engineering, IIT Kharagpur.">
-    <meta name="twitter:image" content="//lithium-03.github.io/teamkart/img/thumbnail.png">
-    <meta name="description" content="Kharagpur Automobile Racing Team, better known as TeamKART is a group of students  from IIT Kharagpur who like to explore the practical side of automotive engineering.Team KART is officially a sponsored research project under the Sponsored Research and Industrial consultancy Cell (SRIC) and the department of Mechanical Engineering, IIT Kharagpur." />
-    <meta http-equiv="cache-control" content="public" />
-    <script>
-        var loaded = false,
-            checks = 0;
-        function setDeceleratingTimeout(callback, factor, times) {
-            var internalCallback = function (t, counter) {
-                return function () {
-                    if (--t > 0) {
-                        window.setTimeout(internalCallback, (3 - (++counter)) * factor / 3);
-                        callback();
-                    }
-                }
-            }(times, 0);
-            window.setTimeout(internalCallback, factor);
-        };
-        setDeceleratingTimeout(KGP_LAN_Condition, 30000, 4);
-        function KGP_LAN_Condition() {
-            checks++;
-            if (loaded)
-                return;
-            switch (checks) {
-                case 1:
-                    alert("Slow connection. Failed to load content :'(");
-                    break;
-                case 2:
-                    alert("Stop staring");
-                    break;
-                case 3:
-                    alert("This is hopeless. Take a few pushups. Your friends call you slowVeer by any chance?");
-                    break;
-            }
-        }
-        var sections = 5;
-    </script>
-    <link rel="stylesheet" media="screen and (min-aspect-ratio : 4/3)" href="/css/styles.css" />
-    <link rel="stylesheet" media="screen and (max-aspect-ratio : 4/3)" href="/css/style-portrait.css" />
-    <script type="text/javascript" src="ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof jQuery == 'undefined') {
-            document.write(unescape("%3Cscript src='/js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-        }
-    </script>
-    <script src="/js/scripts.js"></script>
-    <script src="/js/waypoints.min.js"></script>
-    <script src="/js/jquery.mosaicflow.min.js"></script>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>TeamKART</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/colors.css" rel="stylesheet" type="text/css">
+    <link href="css/colorbox.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link href="css/media.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
+
 <body>
-    <div>
-        <div id="topbar">
-            <div id="line1">
-                <div class="logo">
-                    <div>
-                        <span class="_team">team</span>
-                        <span class="_kart">kart</span>
-                    </div>
-                </div>
-                <div id="sandwitch-button" onclick="$('#links').slideToggle(500,respond);">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+    <header id="header">
+        <div class="logo">
+            <div>
+                <span class="_team">team</span>
+                <span class="_kart">kart</span>
             </div>
-            <ul id="links">
-                <li class="link active" id="ls1" style="border-left:none;">
-                    <span>&nbsp;</span>
-                    <a href="#s1">
-                        <div>Recent</div>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <section id="mainmenu-container">
+        <a class="toggleMenu" href="#">Menu</a>
+        <nav>
+            <ul id="mainmenu">
+                <li>
+                    <a href="index.html">
+                        <span>Home</span>
                     </a>
                 </li>
-                <li class="link" id="ls2">
-                    <span>&nbsp;</span>
-                    <a href="#s2">
-                        <div>Team</div>
+                <li>
+                    <a href="#">
+                        <span>More</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="club.html">
+                                <span>Our Cars</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="team.html">
+                                <span>Our Team</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="features.html">
+                                <span>Achievements</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="galleries.html">
+                        <span>Gallery</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="galleries.html">
+                                <span>All Galleries</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="single-gallery.html">
+                                <span>FDC 2015</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="single-gallery.html">
+                                <span>K-2 gallery</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blog.html">
+                        <span>The Blog</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="blog.html">
+                                <span>All Blogposts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="single-post.html">
+                                <span>FDC 2015 report</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span>Our Sponsors</span>
                     </a>
                 </li>
-                <li class="link" id="ls3">
-                    <span>&nbsp;</span>
-                    <a href="#s3">
-                        <div>Cars</div>
+                <li>
+                    <a href="contact.html">
+                        <span>Contact</span>
                     </a>
                 </li>
-
-                <li class="link" id="ls4">
-                    <span>&nbsp;</span>
-                    <a href="#s4">
-                        <div>Our Partners</div>
-                    </a>
-                </li>
-                <li class="link" id="ls5" style="border-bottom:none;">
-                    <span>&nbsp;</span>
-                    <a href="#s5">
-                        <div>Gallery</div>
-                    </a>
-                </li>
-
             </ul>
-        </div>
-        <div id="contentwrapper">            &nbsp;
-            <div id=contentblock>
-                <div id=s1 class=contentpane-full-sub>
-                    <div class=content-title>Recent blog posts</div>
-                    <a href=/posts/a.html>
-                        <div class=contentpane-half>
-                            <div class=content-title>Formula Design Challenge '15<span style=float:right;font-size:larger>>></span></div>
-                            <div class=content>
-                                <div><img class=content-thumb src="/img/thumbs/18.jpg"></div>
-                                <div>TeamKART put in a fantastic effort over 20th to 25th Jan’15 in Formula Design Challenge 2015, bagging 2nd position in Business Plan and Cost Report Events.</div>
-                                <div class=red-text>Read more>></div>
-                            </div>
+        </nav>
+    </section>
+    <section class="maincontainer">
+        <section class="flex-wrapper">
+            <div id="slider" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="flex-title">
+                            <h3>K2.2</h3>
+                            <p>@ FDC 2015</p>
                         </div>
-                    </a>
-                    <a href=/posts/b.html>
-                        <div class=contentpane-half>
-                            <div class=content-title>A successfull Trip to Silverstone<span style=float:right;font-size:larger>>></span></div>
-                            <div class=content>
-                                <div><img class=content-thumb src="/img/thumbs/a21.jpg"></div>
-                                <div>July 2013: Team KART, Formula SAE team of IIT Kharagpur made some history for our institute at Formula Student UK</div>
-                                <div class=red-text>Read more>></div>
-                            </div>
+                        <img src="images/photos/K2.2_1.jpg" />
+                    </li>
+                    <li>
+                        <div class="flex-title">
+                            <h3>K2</h3>
+                            <p>@ Formula Student UK 2015</p>
                         </div>
-                    </a>
-                </div>
-                <div id=s2 class=contentpane-full>
-                    <a href=/team.html>
-                        <div class=content-title>The Team<span style=float:right;font-size:larger>>></span></div>
-                    </a>
-                    <div class=content>
-                        <a href=/team.html>
-                            <div class=red-text>Click to see full team structure.</div>
+                        <img src="images/photos/K2_2.jpg" />
+                    </li>
+                    <li>
+                        <div class="flex-title">
+                            <h3>K2</h3>
+                            <p>In front of Nehru museum, IIT Kharagpur</p>
+                        </div>
+                        <img src="images/photos/K2_1.jpg"/>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="clear"></div>
+        <section class="pagecontainer">
+            <section class="leftcontainer">
+                <h1>Latest News</h1>
+                <hr />
+                <article class="post">
+                    <figure>
+                        <a href="single-post.html">
+                            <img src="images/photos/FDC_1.jpg"/>
                         </a>
-                        <div>Formula SAE at IIT Kharagpur took a solid form in October 2008, when a group of enthusiastic students got together to form TeamKART.</div>
-                        <div>It was started up as a project under the aegis of the Sponsored Research and Industrial Consultancy Cell (SRIC) of IIT Kharagpur and under the purview of the Mechanical Department. Since then there has been a steady rise in our workforce and our potential as a team.</div>
-                        <div class=content-subsection>
-                            <div><img class=content-thumb style=width:250px src="/img/thumbs/b7.jpg"></div>
-                            <div>
-                                <div>Our journey began with our first car, the KX-1. After that we, in the span of less than 2 years, achieved the feat of competing in an international event with our second car, the K-1. This was followed by K-2 which was lighter than all of its predecessors. K-2 was the first to participate in dynamic events, in FSAE 2013. We had our first podium in Formula Design Challenge 2015.</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>We are guided by our extremely competent faculty from the Department of Mechanical Engineering. Our faculty advisors are:</div>
-                            <div>
-                                <ul>
-                                    <li class=listitem><a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aXmdU">Prof. Amiya R. Mohanty</a></li>
-                                    <li class=listitem><a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bVmWR">Prof. Kingshook Bhattacharyya</a></li>
-                                    <li class=listitem><a href="http://iitkgp.ac.in/fac-profiles/showprofile.php?empcode=aWmdU">Prof Cheruvu S. Kumar</a></li>
-                                    <li class=listitem><a href="http://www.iitkgp.ac.in/fac-profiles/showprofile.php?empcode=bamYQ">Prof Sushanta K. Panda</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id=s3 class=contentpane-full>
-                    <div class=content-title>Cars</div>
-                    <div class=content>
-                        <div class=content-subsection>
-                            <div><img class=content-thumb style=width:250px src="/img/thumbs/c11.jpg"></div>
-                            <div>
-                                <div>Our first car, the KX-1, was completed in 18 months. We participated in Formula Student 2010 thus making us the only team from Eastern India and amongst the few Indian teams to be a part of this prestigious event. We stood 9th in the cost report analysis and were amongst the 6 shortlisted teams for the Airbus Team Work Award.</div>
-                            </div>
-                        </div>
-                        <div>&nbsp;</div>
-                        <div class=content-subsection>
-                            <div><img class=content-thumb style=width:250px;float:right;padding-left:10px src="/img/thumbs/b8.jpg"></div>
-                            <div>
-                                <div>Having completed our second car, the K-1, in just 7 months, we participated in Formula Student 2011. We are amongst the top 3 rookie teams at the event. Just like the previous year, we were once again nominated for the Airbus Team Work Award</div>
-                            </div>
-                        </div>
-                        <div>&nbsp;</div>
-                        <div>&nbsp;</div>
-                        <div class=content-subsection>
-                            <div><img class=content-thumb style=width:250px src="/img/thumbs/a1.jpg"></div>
-                            <div>
-                                <div>We started designing our our third car, the K-2, in the December of 2011. The manufacture of the car took us about 5 months and we began its testing in the June of 2012. We participated in Formula Student 2013 where we stood 67th overall.</div>
-                            </div>
-                            <div>&nbsp;</div>
-                            <div>&nbsp;</div>
-                        </div>
-                        <div>In 2015 with the now upgraded and rechristened K-2.2, we participated in Formula Design Challenge 2015 held at Coimbatore, where we brought home silverware in Cost Report and Business presentation events.</div>
-                    </div>
-                </div>
-                <div id=s4 class=contentpane-full>
-                    <a href=/spons.html>
-                        <div class=content-title>Our Partners<span style=float:right>>></span></div>
-                    </a>
-                    <div class=content>
-                        <a href=/spons.html>
-                            <div class=red-text>Click to see all sponsors.</div>
+                        <figcaption>
+                            <h2>Formula Design Challenge 2015</h2>
+                            <div class="post-date">Jan 28,2015</div>
+                        </figcaption>
+                    </figure>
+                    <p>
+                        TeamKART put in a fantastic effort over 20th to 25th Jan’15 in Formula Design Challenge 2015, bagging 2nd position in Business Plan Presentation and Cost Report Analysis.
+                        <a href="single-post.html">Read more...</a>
+                    </p>
+                </article>
+                <hr />
+                <article class="post">
+                    <figure>
+                        <a href="single-post.html">
+                            <img src="images/photos/K2_3.jpg" />
                         </a>
-                        <div class=slide_cont>
-                            <div class="slide displayed" style=background-image:url(/img/sponsors/ongc.png);transform:translate(-150%)></div>
-                            <div class="slide displayed" style=background-image:url(/img/sponsors/hurix.png);transform:translate(-50%)></div>
-                            <div class="slide displayed" style=background-image:url(/img/sponsors/lafarge.png);transform:translate(50%)></div>
-                            <div class=slide style=background-image:url(/img/sponsors/magod.png);transform:translate(-150%)></div>
-                            <div class=slide style=background-image:url(/img/sponsors/ni.png);transform:translate(-50%)></div>
-                            <div class=slide style=background-image:url(/img/sponsors/ricardo.png);transform:translate(50%)></div>
-                            <div class=slide style=background-image:url(/img/sponsors/pp.png);transform:translate(-150%)></div>
-                            <div class=slide style=background-image:url(/img/sponsors/eu.png);transform:translate(-50%)></div>
-                            <script>        var state = 0; $slide = $(".slide"), window.setInterval(function () { for ($($slide[state]).animate({ opacity: "1" }, 500), i = 0; $slide[i]; i++) i % 3 == state % 3 && i != state && ($($slide[i]).animate({ opacity: "0" }, 500), i += 2); state++, state %= 8 }, 1e3);</script>
-                        </div>
-                        <div>TeamKART is always on the lookout for new partners who can help the project. We always highlight our corporte sponsors and express our gratitude via the media.</div>
-                        <div>Its not only our public outreach that we bring to the table, sponsoring us also provides access to skilled young talent pool. TeamKART enables members to gain tremendous technical and practical know-how of the field and also fosters teamwork, organization and project management.</div>
-                        <span class=red-text>For more information, please contact us.</span>
-                    </div>
-                    <div>
-                        <div class=namebox>
-                            <div class=dp><img src=/img/team/VisheshKapoor_150.jpg></div>
-                            <div class=info>
-                                <div>Vishesh Kapoor</div>
-                                <div>Team Leader</div>
-                                <a class=phone>+91-9547619069</a>
-                                <a class=mail>visheshvipul@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class=namebox>
-                            <div class=dp><img src=/img/team/SarthakJain_150.jpg></div>
-                            <div class=info>
-                                <div>Sarthak Jain</div>
-                                <div>Subsystem Head</div>
-                                <a class=phone>+91-8967688708</a>
-                                <a class=mail>sarthakjain939@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class=namebox>
-                            <div class=dp><img src=/img/team/Yash_Kariwal_150.jpg></div>
-                            <div class=info>
-                                <div>Yash Kariwal</div>
-                                <a class=phone>+91-7872834599</a>
-                                <a class=mail>yash15kariwal@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class=namebox>
-                            <div class=dp><img src=/img/team/Ketan_150.jpg></div>
-                            <div class=info>
-                                <div>Ketan Mundhra</div>
-                                <a class=phone>+91-9775881167</a>
-                                <a class=mail>ketanmundhra95@gmail.com</a>
-                            </div>
-                        </div>
+                        <figcaption>
+                            <h2>Formula Student UK 2013</h2>
+                            <div class="post-date">Aug 1 2013</div>
+                        </figcaption>
+                    </figure>
+                    <p>
+                        The formula style prototype race car which was completely designed and manufactured by the undergraduate student team TeamKART, had cleared all the six scrutinizing inspections..
+                        <a href="single-post.html">Read more...</a>
+                    </p>
+                </article>
+                <hr />
+                <div class="blogpager">
+                    <div class="previous">
+                        <a href="blog.html" class="button next-prev">View All</a>
                     </div>
                 </div>
-                <div id=s5 class=contentpane-full>
-                    <div class=content-title>Gallery</div>
-                    <div class=content>
-                        <div id=gallery class=mosaicflow>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/17.jpg>
-                                <p>@FDC '15</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/18.jpg>
-                                <p>@FDC '15</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/19.jpg>
-                                <p>@FDC '15</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/20.jpg>
-                                <p>@FDC '15</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/6.jpg>
-                                <p>@FDC '15</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a21.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a22.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a12.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a1.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a2.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a3.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a10.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a4.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a15.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/a16.jpg>
-                                <p>K-2</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/b13.jpg>
-                                <p>K-1</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/b5.jpg>
-                                <p>K-1</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/b7.jpg>
-                                <p>K-1</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/b8.jpg>
-                                <p>K-1</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/c9.jpg>
-                                <p>KX-1</p>
-                            </div>
-                            <div class=mosaicflow__item>
-                                <img src=/img/gallery/c11.jpg>
-                                <p>KX-1</p>
-                            </div>
-                        </div>
-                    </div>
+            </section>
+            <section class="rightcontainer">
+                <div class="sidebarbox">
+                    <h3>About</h3>
+                    <p>
+                        TeamKART is the official FSAE team of IIT Kharagpur. We are a group of students who design and build Formula 1 style racecars and compete in Formula Student competitions.
+                        <a href="club.html">Read More...</a>
+                    </p>
                 </div>
-                <div style=position:relative>
-                    <div id=soc_box class=page-center>
-                        <div class=content style=font-size:x-large>Follow us on</div>
-                        <div style=border-left:none>
-                            <a target=_blank href=//www.facebook.com/TeamKART><img class=social_img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzEwMENEMkQwNEVCMTFFMzkxNUE5RkQ3QUYxNzFGMTAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzEwMENEMkMwNEVCMTFFMzkxNUE5RkQ3QUYxNzFGMTAiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3Yjg3YWUyLTYzZTctMGI0OC04ZGVkLWE1ZDk4ODQyOWUwZSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DHy1wAAABY0lEQVR42mIMqNnHMJQBE8MQB6MeGPXAqAdGPTDqgVEPjHpg1AOjHhj1wKgHRj0w6oGBAiw0NZ2DjVlHUUCYj4ONFRpSx668evvp59DwgJOhRIq3Gic7M7Lg/eefh4YHDFWFcoM0h3AeCLVXGMJ5gIWZSU2WD879/5/hwIUXX3/8AbLffvw5BDzAzsrEzMQI59568nHSuutDuBj98/f/kElCzMyMHKzMXBwoxgJjgxsm8uP3379U9Q8jdcdGzTVFKqJ08ShoWnjx/J13Q7gmfvv559DLA8jg/edfQ9gDv//8+/ztN3XNpHIegGfiWcWWcMEbjz62LL4EqhAYGL6Ba4PBWwoBS5ivf9Gd+Pff/6/Udvdof2DUA6MeGPXAqAdGPTA8PECTHtmvP//mbb+DaIF+/DHEPABstG0+9ng0CY16YNQDox4Y9cCoB0Y9MOqBUQ+MemDUA6MeGPXAqAcGNQAIMABkxmFv7JqymwAAAABJRU5ErkJggg=="></a>
-                            <a target=_blank href=//twitter.com/Team_Kart><img class=social_img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkFFMUFDQzMwNEVCMTFFM0I5RENERURENTM1MThENEIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkFFMUFDQzIwNEVCMTFFM0I5RENERURENTM1MThENEIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3Yjg3YWUyLTYzZTctMGI0OC04ZGVkLWE1ZDk4ODQyOWUwZSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4UAYh5AAAClklEQVR42uzYz2vTUBwA8OQ1P5q227rVdR0OOzfxB4ooggw96EER3Q7ePIo4BC/+CYJnwaunIR5FPHgTB14U/DEnyEDU4VxxdK7bmrYuTfqSl/jFSa3O1NlkJpPv99S0een38/i+1+8rf3GyzG3mINwmDwQgAAEIQAACEIAABCAAAQhAAAJaDOEffQ3PpWXCHK5Qs51QAeICr1nNUiI8N5KRT6YlJcLDpWrad+dqL1RTIvyxLeLrsgWkIAEXssrzojmhmm43nN+mHE2J9ctOkVzarhzvlvpj5IPGxgs04DWwMxEZ7VcOJcXffrqvXWjMvnFUlXGvStapHilgQJTwUBqXB5SzvfK3GvkphrpEt4FJkT+TkSdUK2DAMv1ewSO98tXdif0dQqMiE3V9fpHa199rRWoHvIhfqubpjLz6eqtCrgzGFmo2vPluhc3rzHFf3m+/MI/L1wcA7DDji/Rwl5iSfsx0j0yGM/Lwn8Zajj/bqacSgmq5tidRMltJRTVDAIAfprLpDMYjLYzN63bwAIhHi61s5DD505oVCsDjJTpZMv921EeNVcJQQqtzOTZr3JkzmjcUv8STZZPzKXxo5voUcq4vuv77Ydk8K1K/AD600zMaa9ILrY17eYPaXIgAELdyxjpXwlTZeupf/fh2HqC2c3NGz8YodM4Hk67P/GzYYzk9XOeBenSI/JGUeMA9+3nDvjFdXbH8zd8bAFq3bpkkBX4gIeyIR9Z2o/WAArudM6rM5+y9At5UrBNpaSgldYquuc9W2f18bapicRsTngBQDg8W6MMC3dsm7GoTsjHSLhDo66ANXaIOpA5L9pPOwn6oh1M6TPDGzTH+L4QABCAAAQhAAAIQgAAEIAABCEDAfwn4KsAAJX7tA1H6uSoAAAAASUVORK5CYII="></a>
-                            <a target=_blank href=//www.youtube.com/channel/UCvHSedfK-dS5wtvZphz8uow><img class=social_img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzRENzcxODIwNEVCMTFFM0I5QTVDQTU1NTY2ODlEOTYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzRENzcxODEwNEVCMTFFM0I5QTVDQTU1NTY2ODlEOTYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3Yjg3YWUyLTYzZTctMGI0OC04ZGVkLWE1ZDk4ODQyOWUwZSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5stF4EAAAB00lEQVR42uzXu07CUBgH8J4CLcgtXBKNKGFy0UkfQCcVExINT4ATT6GLDjrpO2hYeAMvCwszIwwkTCRNIECL9Ho8bAyUBjUeSP7fevK1/Z3vXL6SwXVJWOcQhTUPAAAAAAAAAAAAAAAAAAAAAAAAAAA+4f+rB5FoVEwmSSxGIhESDhNJEgIBwc+eTwTLFEyLGgbVVKppdDB0+j06HK4KQC4UpPM8CQaXyqK6bnx+6NUq5yXky+Xky6tlv35aMVmW8xe+vT3OAHE78yt/JsMbkEi4DU1eX+xOx6MOyRRnAImE3YbMel27vzPe3xalh0K8j1FZXjRqWZNKZfz8RFXVZSdIvCvAzkqvsBoN9fbG6XbnVWBjPS4y384uiUXnHKa2zfkeoJOJ1xv8wWJROj2bP2rovAH6oi8QN7dC5bIvm3VNH495A9w7gmCp5N8/IAt3OR2NeAN6fbehwOGRZ7rjnv5Pm9hqNVmX9tNky241eVdgMBg/PkjHJySdFlMpEo97rBldZynTblRRjFrNURT+3ajdbn+127PHzrSdZveDJJFpOy1Qy2anDTVN1kuzWV/R/4HZhcHmmOKPDAAAAAAAAAAAAAAAAAAAAAAAAABgpeNbgAEA2iyYCaSsiAAAAAAASUVORK5CYII="></a>
-                            <a target=_blank href=//www.linkedin.com/company/team-kart><img class=social_img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDVGNTc4OTcwNEVCMTFFM0JENEU4RjhCOUJCQzdEQ0YiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDVGNTc4OTYwNEVCMTFFM0JENEU4RjhCOUJCQzdEQ0YiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3Yjg3YWUyLTYzZTctMGI0OC04ZGVkLWE1ZDk4ODQyOWUwZSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDplZGU1YzZlYy0xNzM2LTRlYzQtOGY3Zi00YjMwODdjODkyOWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6k77qFAAABqUlEQVR42uzZS0sCURQH8Hk1Mz5Gy3xR1kJyE26qXdC+RX23Pkht+gpBgVEEbYxolZoJviebtx2QpjEXLQaaLv0Pg4znjnB/3tcR+ZPaE8dyCBzjAQAAAAAAAAAAAAAAAAAAAAAA0QF4jtNkSRGj+S6kkJ/PxeXjSpEAdH/bHl48dxkbgYON1VnvKXaL6WxMZgyQlOfGUFMkxgD1ru7f65bTHBuMrYFaqz807HVNnTjufWdkuR5jAIqHnk5XVNtoWMBaUt0vZfy3p/UWvW5nNbr85GWjN7KcnUK6pKmxJfHddhtj4+51OLac6AHUIZo/35IpRQomyyvxai7lHxS0a+UTSjWnnT+2w6+Z3zh99orLi8ecLApHWwVFEhgAUHjTaWdiTmw3mFQlsZpNRb+If4w32z2rt/qGLfD8YTlfyST8ps107KY9+OsjcP0yoN7PxuGq2ZtbLbLEwBTSA7vNwLSJEZxFjJXT1HkSfFWyPH4PAADAPweE3YZtz1usyUxnLknPBFupyfqsLMzQ5TePf+oBAAAAAAAAAAAAAAAAAAAAAACASOJDgAEA8p2JAyQ4Nw4AAAAASUVORK5CYII="></a>
-                        </div>
+                <div class="sidebarbox">
+                    <div class="sidebarbox-title">
+                        <h3>Gallery</h3>
                     </div>
+                    <ul class="team-gallery">
+                        <li>
+                            <a class="clb-photo" href="images/photos/b1.jpg">
+                                <img src="images/photos/a1.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b2.jpg">
+                                <img src="images/photos/a2.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b3.jpg">
+                                <img src="images/photos/a3.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b4.jpg">
+                                <img src="images/photos/a4.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b5.jpg">
+                                <img src="images/photos/a5.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b6.jpg">
+                                <img src="images/photos/a6.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b7.jpg">
+                                <img src="images/photos/a7.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b8.jpg">
+                                <img src="images/photos/a8.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="clb-photo" href="images/photos/b9.jpg">
+                                <img src="images/photos/a9.jpg" />
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="galleries.html" class="button button-widget">View All</a>
+                </div>
+            </section>
+        </section>
+        <div class="clear"></div>
+        <div class="logos-title">Our Sponsors</div>
+        <section class="transparent-bg">
+            <div id="logos">
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/ongc.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/ricardo.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/ni.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/lafarge.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/hurix.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/magod.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/eu.png" />
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="images/photos/pp.png" />
+                    </a>
                 </div>
             </div>
-            <div id=footer>&nbsp;</div>
-        </div>
-    </div>
+        </section>
+        <footer id="footer">
+            <div class="clear"></div>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/TeamKART" target="_blank">
+                        <img class="social-icon" src="images/social-icons/facebook.png" />
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="#" target="_blank">
+                        <img class="social-icon" src="images/social-icons/twitter.png" />
+                    </a>
+                </li>-->
+                <li>
+                    <a href="https://www.linkedin.com/company/2695940" target="_blank">
+                        <img class="social-icon" src="images/social-icons/linkedin.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCvHSedfK-dS5wtvZphz8uow" target="_blank">
+                        <img class="social-icon" src="images/social-icons/youtube.png" />
+                    </a>
+                </li>
+            </ul>
+        </footer><a href="#" class="back-to-top"></a>
+    </section>
+    <!-- JS FILES -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/backstretch.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript">
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery('body').backstretch("/images/photos/splash.jpg");
+        });
+    </script><script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#logos').bxSlider({
+                slideWidth: 235,
+                auto:true,
+                pager: false,
+                minSlides: 1,
+                maxSlides: 8,
+                infiniteLoop: true,
+                hideControlOnEnd: true,
+                slideMargin: 10
+            });
+        });
+    </script>
+    <script src="js/custom.js" type="text/javascript"></script>
 </body>
 </html>
