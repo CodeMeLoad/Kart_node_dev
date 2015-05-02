@@ -1,4 +1,3 @@
-// Jquery Browser Detection
 (function() {
     "use strict";
     var matched, browser;

@@ -80,20 +80,20 @@ html[xmlns] .slides {
 	cursor: pointer;
 	text-indent: -999em;
 	z-index:100;
-    -webkit-transition: background-color 0.2s ease-in-out;
-	-moz-transition: background-color 0.2s ease-in-out;
-	-o-transition: background-color 0.2s ease-in-out;
-	-ms-transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-image 0.2s ease-in-out;
+	-moz-transition: background-image 0.2s ease-in-out;
+	-o-transition: background-image 0.2s ease-in-out;
+	-ms-transition: background-image 0.2s ease-in-out;
 }
 .flex-direction-nav .flex-next {
-	background-position:center center;
-	background-image:url('../images/s-right.png');
+	background-position-x:-180px;
+    background-position-y:0;
 	background-repeat:no-repeat;
 	left: 60px;
 }
 .flex-direction-nav .flex-prev {
-    background-position:center center;
-	background-image:url('../images/s-left.png');
+    background-position-x:-60px;
+    background-position-y:0;
 	background-repeat:no-repeat;
 	left: 0px;
 }

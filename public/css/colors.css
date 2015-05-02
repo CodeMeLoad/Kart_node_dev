@@ -67,13 +67,13 @@ blockquote {
 }
 /* ================= FLEXSLIDER ================== */
 .flex-direction-nav .flex-next {
-    background-color:#000;
+    background-image:url('/images/photos/button-sprite.png');
 }
 .flex-direction-nav .flex-prev {
-    background-color:#000;
+    background-image:url('/images/photos/button-sprite.png');
 }
 .flex-direction-nav li a:hover {
-    background-color: #B8363A;
+    background-position-y:-60px;
 }
 .flex-title {
 	background-color:rgba(0,0,0,0.8);
@@ -382,10 +382,12 @@ input:focus, textarea:focus {
 }
 /* ================= BACK TO TOP BUTTON ================== */
 .back-to-top {
-    background-color: #000;
+    background-image: url('/images/photos/button-sprite.png');
+    background-position-x:-120px;
+    background-position-y:0px;
 }
 .back-to-top:hover {
-    background-color: #B8363A;
+    background-position-y:-60px;
 }
 /* ================= COLORBOX ================== */
 #cboxOverlay{
