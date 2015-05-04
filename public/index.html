@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="features.html">
+                            <a href="achievements.html">
                                 <span>Achievements</span>
                             </a>
                         </li>
@@ -129,7 +129,7 @@
                     <li>
                         <div class="flex-title">
                             <h3>K2</h3>
-                            <p>@ Formula Student UK 2015</p>
+                            <p>@ Formula Student UK 2013</p>
                         </div>
                         <img src="images/photos/K2_2.jpg" />
                     </li>
@@ -323,8 +323,7 @@
     <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
     <script type="text/javascript">
-        jQuery(window).load(function () {
-            "use strict";
+        $(window).load(function () {
             $('body').backstretch("/images/photos/splash.jpg");
         });
     </script>
@@ -332,13 +331,14 @@
         $(document).ready(function () {
             $('#logos').bxSlider({
                 slideWidth: 235,
-                auto:true,
+                auto: true,
                 pager: false,
                 minSlides: 1,
                 maxSlides: 8,
                 infiniteLoop: true,
                 hideControlOnEnd: true,
-                slideMargin: 10
+                slideMargin: 10,
+                controls: false
             });
         });
     </script>

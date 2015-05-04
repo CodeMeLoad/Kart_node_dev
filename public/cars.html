@@ -10,6 +10,7 @@
     <link href="css/normalize.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
     <link href="css/grid.css" rel="stylesheet" type="text/css" />
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/colors.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
@@ -54,7 +55,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="features.html">
+                            <a href="achievements.html">
                                 <span>Achievements</span>
                             </a>
                         </li>
@@ -113,13 +114,41 @@
         </nav>
     </section>
     <section class="maincontainer">
-        <!-- PAGE TITLE -->
-        <div class="page-title">Our Club</div>
-        <!-- FEATURED IMAGE -->
-        <div class="page-img">
-            <img src="images/photos/club.jpg" alt="" />
-        </div>
-        <!-- PAGE CONTAINER -->
+        <div class="page-title">Our Cars</div>
+        <section class="flex-wrapper">
+            <div id="slider" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="flex-title">
+                            <h3>K2.2</h3>
+                            <p>@ Formula Design Challenge 2015</p>
+                        </div>
+                        <img src="images/photos/K2.2_2.jpg" />
+                    </li>
+                    <li>
+                        <div class="flex-title">
+                            <h3>K2</h3>
+                            <p>@ Formula Student UK 2013</p>
+                        </div>
+                        <img src="images/photos/K2_2.jpg" />
+                    </li>
+                    <li>
+                        <div class="flex-title">
+                            <h3>K1</h3>
+                            <p>@Formula Student UK 2011</p>
+                        </div>
+                        <img src="images/photos/K1_1.jpg" />
+                    </li>
+                    <li>
+                        <div class="flex-title">
+                            <h3>KX1</h3>
+                            <p>The first car by KART</p>
+                        </div>
+                        <img src="images/photos/KX1_1.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </section>
         <section class="pagecontainer">
             <h2>Voluptate illum dolore</h2>
             <p>Voluptate illum dolore ita ipsum, quid deserunt singulis, labore admodum ita multos malis ea nam nam tamen fore amet. Vidisse quid incurreret ut ut possumus transferrem si ita labore dolor si appellat, aut dolore doctrina. Commodo dolor esse in magna, a a multos senserit nam si aliqua iis multos, appellat elit senserit litteris ubi ne eram voluptate commodo si aliqua occaecat ad quem enim, eram domesticarum fabulas quorum doctrina ut commodo efflorescere aut possumus.</p>
@@ -241,7 +270,8 @@
                 maxSlides: 8,
                 infiniteLoop: true,
                 hideControlOnEnd: true,
-                slideMargin: 10
+                slideMargin: 10,
+                controls: false
             });
         });
     </script>
