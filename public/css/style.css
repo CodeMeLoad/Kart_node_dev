@@ -1017,14 +1017,12 @@ textarea {
     -o-transition:all 0.2s ease-in-out;
     -ms-transition:all 0.2s ease-in-out;
     transition:all 0.2s ease-in-out;
-    background-image: url('../images/eye.png');
     background-position: right center;
     background-repeat: no-repeat;
     display: block;
 }
 .teamlist ul li a:hover {
     text-decoration:none;
-    background-image: url('../images/eye2.png');
 }
 .teamlist-popup {
     position: relative;
