@@ -23,13 +23,9 @@ FOOTER
 FLICKR
 SOCIAL ICONS
 BACK TO TOP BUTTON
-
-
 */
 
 /* ================= FONTS ================== */
-
-/*font faces*/
 @font-face
 {
     font-family: blade;
@@ -59,18 +55,16 @@ BACK TO TOP BUTTON
   src: local('Signika Negative'), local('SignikaNegative-Regular'), url(/css/f5.ttf) format('truetype');
 }
 /*
-body, p,.ytv-list a {
-    font-family:'open_sansregular';
+body, p {
+    font-family:'Signika Negative';
     font-weight:normal;
-}
+}*/
 h1, h2, h3, h4, h5, h6,#mainmenu,#submenu,#submenu-login,#header .logo span,.scores-title,.page-title,.match-results,.logos-title,.toggleMenu,#mobile-menu,.resp-tabs-list li, .filters li a,.ytv-list-header span {
-    font-family: 'oswaldregular';
+    font-family: 'Monda';
     font-weight:normal;
-    text-transform:uppercase;
 }
-*/
-/* ================= GENERAL STYLES ================== */
 
+/* ================= GENERAL STYLES ================== */
 html, body{
 	margin: 0;
 	padding: 0;
@@ -186,75 +180,6 @@ blockquote cite {
 .list li:last-child{
     margin-bottom: 0px;
 }
-/* ================= SUB MENU  ================== */
-#submenu-container {
-    width: 100%;
-    max-width:1024px;
-    margin:0px auto 0px auto;
-    position:relative;
-}
-#mobile-menu {
-    display: none;
-    list-style:none;
-    padding:10px 30px;
-    margin:0px;
-    left:0;
-    top:0;
-    width:100%;
-    z-index:9;
-    font-size:14px;
-    text-decoration: none !important;
-}
-#submenu {
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-    font-size:12px;
-    vertical-align: bottom;
-    width: 100%;
-    float: left;
-}
-#submenu ul{
-    margin: 0px;
-    padding: 0px 0px 0px 15px;
-    list-style: none;
-}
-#submenu ul li{
-    float: left;
-    padding: 0px;
-    margin: 0px;
-}
-#submenu a{
-    padding: 15px;
-    display: block;
-    margin: 0px;
-    vertical-align: bottom;
-}
-#submenu-login {
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-    font-size:12px;
-    vertical-align: bottom;
-    width: 30%;
-    float: right;
-}
-#submenu-login ul{
-    margin: 0px;
-    padding: 0px 15px 0px 0px;
-    list-style: none;
-}
-#submenu-login ul li{
-    float: right;
-    padding: 0px;
-    margin: 0px;
-}
-#submenu-login a{
-    padding: 15px;
-    display: block;
-    margin: 0px;
-    vertical-align: bottom;
-}
 /* ================= HEADER  ================== */
 #header {
     width: 100%;
@@ -287,12 +212,16 @@ span._team
 {
     font-family:pirulen !important;
     font-size:52.5px;
+    text-transform:lowercase !important;
+    text-decoration:none !important;
     color:#FFF !important;
 }
 span._kart
 {
     font-family:blade !important;
     font-size:90px;
+    text-decoration:none !important;
+    text-transform:lowercase !important;
     color:#B8363A!important;
 }
 #header .logo .tag{
@@ -440,60 +369,6 @@ span._kart
 }
 #mainmenu li li li a {
     z-index:200;
-}
-
-/* ================= HOMEPAGE FIXTURE BOX ================== */
-.scores-title {
-    padding: 10px 30px 10px 30px;
-    font-size: 30px;
-    position: relative;
-}
-.scores-title:after, .scores-title:before {
-	bottom: 100%;
-	left: 60%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-.scores-title:after {
-	border-width: 15px;
-	margin-left: -15px;
-}
-.scores-title:before {
-	border-width: 20px;
-	margin-left: -20px;
-}
-.ytv-below:after, .ytv-below:before {
-	display: none !important;
-}
-#fixture {
-    width:100%;
-    height:auto;
-    z-index:9;
-    overflow: hidden !important;
-    position: relative;
-    text-align: center;
-}
-.match-results {
-    margin-bottom: 18px;
-    padding-top: 10px;
-}
-.match-place {
-    margin-bottom: 20px;
-}
-.match-results span{
-    padding: 10px 15px 10px 15px;
-    margin: 0px;
-    font-size: 22px;
-    text-transform: uppercase;
-}
-.match-place span{
-    padding: 5px 10px 5px 10px;
-    margin: 0px;
-    font-size: 13px;
 }
 /* ================= SPONSORS ================== */
 #logos {
@@ -853,41 +728,6 @@ textarea {
     margin: 0px;
     padding: 15px;
 }
-.fixture-row {
-    position: relative;
-    width: 100%;
-    display: inline-block;
-    vertical-align: bottom;
-}
-.fixture-row a div{
-    -webkit-transition:all 0.1s ease-in-out;
-    -moz-transition:all 0.1s ease-in-out;
-    -o-transition:all 0.1s ease-in-out;
-    -ms-transition:all 0.1s ease-in-out;
-    transition:all 0.1s ease-in-out;
-}
-.fixture-row-left,.fixture-row-right {
-    padding: 10px;
-    width: 50%;
-    height: 40px;
-}
-.fixture-row-left div {
-    padding-left: 15px;
-    float: right;
-    background-color:transparent !important;
-}
-.fixture-row-right div {
-    padding-right: 15px;
-    float: left;
-    background-color:transparent !important;
-}
-.fixture-row-left {
-    float: left;
-}
-.fixture-row-right {
-    float: right;
-    text-align: right;
-}
 /* ================= GALLERY ================== */
  .filters {
     list-style:none;
@@ -957,7 +797,7 @@ textarea {
     transition:all 0.4s ease-in-out;
 }
 .team-gallery li a {
-    -webkit-perspective: 1000;
+    -webkit-perspective:1000;
     opacity:1;
     overflow: hidden;
 }
@@ -1040,6 +880,28 @@ textarea {
 .teamlist-popup p{
     margin-bottom: 20px;
 }
+a.contact-info>div
+{
+    margin-bottom:15px;
+}
+a.contact-info>div>span
+{
+    text-decoration:none !important;
+    font-size:16px;
+    color:#000;
+    padding-left:5px;
+}
+a.contact-info:hover
+{
+    text-decoration:none;
+}
+img.popup-glyph
+{
+    width:20px;
+    height:20px;
+    margin:0;
+}
+
 /* ================= FLEX IMAGE ================== */
 .caption-image {
     position:relative;
@@ -1243,7 +1105,6 @@ textarea {
     bottom: 0px;
     right: 15px;
     display: none;
-    background-image:url('../images/gototop.png');
     background-repeat:no-repeat;
     background-position:center center;
     width:60px;
