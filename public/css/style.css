@@ -883,6 +883,7 @@ textarea {
 a.contact-info>div
 {
     margin-bottom:15px;
+    display:inline-block;
 }
 a.contact-info>div>span
 {
@@ -897,8 +898,8 @@ a.contact-info:hover
 }
 img.popup-glyph
 {
-    width:20px;
-    height:20px;
+    width:22px;
+    height:auto;
     margin:0;
 }
 
