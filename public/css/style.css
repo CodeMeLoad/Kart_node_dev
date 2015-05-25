@@ -42,23 +42,6 @@ BACK TO TOP BUTTON
   font-weight: 400;
   src: local('Monda Regular'), local('Monda-Regular'), url(/css/f3.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(/css/f4.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Signika Negative';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Signika Negative'), local('SignikaNegative-Regular'), url(/css/f5.ttf) format('truetype');
-}
-/*
-body, p {
-    font-family:'Signika Negative';
-    font-weight:normal;
-}*/
 h1, h2, h3, h4, h5, h6,#mainmenu,#submenu,#submenu-login,#header .logo span,.scores-title,.page-title,.match-results,.logos-title,.toggleMenu,#mobile-menu,.resp-tabs-list li, .filters li a,.ytv-list-header span {
     font-family: 'Monda';
     font-weight:normal;
@@ -955,6 +938,10 @@ img.popup-glyph
     -o-animation: animate-bg 5s linear infinite;
     animation: animate-bg 5s linear infinite;
     position:relative;
+}
+.hidden
+{
+    display:none;
 }
 .message-close {
     position:absolute;
