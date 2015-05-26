@@ -118,13 +118,16 @@
             <div class="grid">
                 <div class="unit two-thirds">
                     <form id="contactForm">
-                        <label>Your Name:</label>
-                        <input type="text" name="senderName" id="senderName" required="required" />
-                        <label>Your Email (so that we may gat back to you on your query):</label>
-                        <input type="email" name="senderEmail" id="senderEmail" />
-                        <label>Your Message:</label>
-                        <textarea name="message" id="message" required="required"></textarea>
-                        <div class="black message hidden">
+                        <label>* Name:</label>
+                        <input type="text" name="senderName" id="senderName" required="required" placeholder="Firstname Lastname"/>
+                        <label>Email (so that we may get back to you on your query):</label>
+                        <input type="email" name="senderEmail" id="senderEmail" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" placeholder="user@domain.com"/>
+                        <label>Phone (10 digits only):</label>
+                        <input type="tel" name="senderPhone" id="senderPhone" pattern="[0-9]{10}" placeholder="1234567890"/>
+                        <label>* Message:</label>
+                        <textarea name="message" id="message" required="required" placeholder="Say something!"></textarea>
+                        <div class="g-recaptcha" style="margin-top:10px;" data-sitekey="6Le5ZAcTAAAAAAbuLZKg3rceEvwoZh0IQRV49WEX"></div>
+                        <div class="black message hidden" style="margin-top:10px;">
                             <span class="message-close"></span>
                             <h5>Sending Message</h5>
                             <p>Please wait</p>
@@ -367,6 +370,7 @@
         <a href="#" class="back-to-top"></a>
     </section>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="js/backstretch.js"></script>
     <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
     <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
@@ -413,16 +417,26 @@
                 e.preventDefault();
                 showMessage();
                 var msg = {
-                    'name':$('#senderName').val(),
-                    'email':$('#senderEmail').val(),
-                    'message':$('#message').val()
+                    'name': $('#senderName').val(),
+                    'email': $('#senderEmail').val(),
+                    'phone': $('#senderPhone').val(),
+                    'message': $('#message').val(),
+                    'captcha': $("#g-recaptcha-response").val()
                 };
+                msg.name=msg.name.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
                 $.ajax({
                     type: 'POST',
                     url: '/message/',
                     data: msg,
-                    success: closeMessage,
-                    error: messageFail
+                    success: function (data) {
+                        if (data == 0)
+                            closeMessage();
+                        else
+                            messageFail(false);
+                    },
+                    error: function () {
+                        messageFail(true)
+                    }
                 });
             });
         });
@@ -440,10 +454,18 @@
                 $('.message>p').html("Please wait");
             }, 5500);
         }
-        function messageFail()
+        function messageFail(param)
         {
-            $('.message>h5').html('Message sending failed');
-            $('.message>p').html("Please check your connection");
+            if (param)
+            {
+                $('.message>h5').html('Message sending failed');
+                $('.message>p').html("Please check your connection");
+            }
+            else
+            {
+                $('.message>h5').html('Error');
+                $('.message>p').html("Captcha Error");
+            }
             $('.message').removeClass('black').addClass('red');
             setTimeout(showMessage, 5000);
             setTimeout(function () {

@@ -631,7 +631,7 @@ span._kart
 }
 /* ================= FORMS ================== */
 
-input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="password"], textarea
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="password"], input[type="tel"],textarea
 {
     width: 80%;
     display: block;
@@ -647,11 +647,11 @@ input[type="text"], input[type="email"], input[type="number"], input[type="date"
     -moz-border-radius: 0px !important;
     border-radius: 0px !important;
 }
-input[type="text"].oversize, input[type="email"].oversize, input[type="number"].oversize, input[type="date"].oversize {
+input[type="text"].oversize, input[type="email"].oversize, input[type="number"].oversize, input[type="date"].oversize ,input[type="tel"].oversize{
 	font-size:15px;
 	padding:4px 5px
 }
-input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus, input[type="password"]:focus,input[type="tel"]:focus {
 	outline:none !important;
 }
 input[type="submit"] {

@@ -1,5 +1,6 @@
 var express = require('express');
 var http = require('http');
+var https = require('https');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var favicon = require('serve-favicon');
@@ -10,32 +11,64 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
-transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'teamkartiitkharagpur@gmail.com',
-        pass: '@teamkart%'
-    }
-});
-mailList = ['nidhin.m3gtr@gmail.com', 'teamkartiitkharagpur@gmail.com'];
 app.post('/message/', function (req, res) {
-    name = req.body.name;
-    email = req.body.email;
-    message = req.body.message;
-    for (i = 0; mailList[i]; i++) {
-        message =
+    verifyRecaptcha(req.body["captcha"], function (success)
+    {
+        if (!success) 
+            res.send('1');
+        else
+        {
+            transporter = nodemailer.createTransport(
+                {
+                    service: 'gmail',
+                    auth:
+                        {
+                            user: 'teamkartiitkharagpur@gmail.com',
+                            pass: '@teamkart%'
+                        }
+                });
+            mailList = ['nidhin.m3gtr@gmail.com'];
+            name = req.body.name;
+            email = req.body.email;
+            phone = req.body.phone;
+            message = req.body.message;
+            for (i = 0; mailList[i]; i++)
             {
-                from: 'mailclient@teamkart.in',
-                subject: 'New message at teamkart.in from ' + req.body.name,
-                text: 'Email: ' + req.body.email + '\n' + req.body.name + ' says: "' + req.body.message + '"'
-            };
-        message.to = mailList[i];
-        transporter.sendMail(message);
-    }
-    res.send(null);
+                message =
+                    {
+                        subject: 'New message at teamkart.in from ' + name,
+                        text: name + ' says: \n\n\t"' + message + '"\n\nContact Info:\nEmail: ' + email + '\nPhone: ' + phone
+                    };
+                message.to = mailList[i];
+                transporter.sendMail(message);
+            }
+            res.send('0');
+        }
+    });
 });
 app.use(express.static(__dirname + '/public'));
 setInterval(function () {
     http.get("http://www.teamkart.in/");
 }, 900000);
 app.listen(app.get('port'));
+var SECRET='6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
+function verifyRecaptcha(key, callback) {
+    https.get("https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function (res) {
+        var data = "";
+        res.on('data', function (chunk) {
+            data += chunk.toString();
+        });
+        res.on('end', function ()
+        {
+            try
+            {
+                var parsedData = JSON.parse(data);
+                callback(parsedData.success);
+            }
+            catch (e)
+            {
+                callback(false);
+            }
+        });
+    });
+}
