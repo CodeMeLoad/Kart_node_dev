@@ -47,9 +47,6 @@ app.post('/message/', function (req, res) {
     });
 });
 app.use(express.static(__dirname + '/public'));
-setInterval(function () {
-    http.get("http://www.teamkart.in/");
-}, 900000);
 app.listen(app.get('port'));
 var SECRET='6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
 function verifyRecaptcha(key, callback) {
