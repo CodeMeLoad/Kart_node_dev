@@ -28,12 +28,12 @@ app.post('/message/', function (req, res) {
                         }
                 });
             mailList = ['nidhin.m3gtr@gmail.com'];
-            email = req.body.email;
             if (req.body.name != undefined)
             {
                 name = req.body.name;
                 phone = req.body.phone;
                 message = req.body.message;
+				email = req.body.email;
                 for (i = 0; mailList[i]; i++)
                 {
                     message =
@@ -47,6 +47,7 @@ app.post('/message/', function (req, res) {
             }
             else
             {
+				email = req.body.email;
                 for (i = 0; mailList[i]; i++) {
                     message =
                         {
