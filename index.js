@@ -28,19 +28,34 @@ app.post('/message/', function (req, res) {
                         }
                 });
             mailList = ['nidhin.m3gtr@gmail.com'];
-            name = req.body.name;
             email = req.body.email;
-            phone = req.body.phone;
-            message = req.body.message;
-            for (i = 0; mailList[i]; i++)
+            if (req.body.name != undefined)
             {
-                message =
-                    {
-                        subject: 'New message at teamkart.in from ' + name,
-                        text: name + ' says: \n\n\t"' + message + '"\n\nContact Info:\nEmail: ' + email + '\nPhone: ' + phone
-                    };
-                message.to = mailList[i];
-                transporter.sendMail(message);
+                name = req.body.name;
+                phone = req.body.phone;
+                message = req.body.message;
+                for (i = 0; mailList[i]; i++)
+                {
+                    message =
+                        {
+                            subject: 'New message at teamkart.in from ' + name,
+                            text: name + ' says: \n\n\t"' + message + '"\n\nContact Info:\nEmail: ' + email + '\nPhone: ' + phone
+                        };
+                    message.to = mailList[i];
+                    transporter.sendMail(message);
+                }
+            }
+            else
+            {
+                for (i = 0; mailList[i]; i++) {
+                    message =
+                        {
+                            subject: 'New blog subscriber at teamkart.in',
+                            text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
+                        };
+                    message.to = mailList[i];
+                    transporter.sendMail(message);
+                }
             }
             res.send('0');
         }
