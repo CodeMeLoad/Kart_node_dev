@@ -11,6 +11,7 @@
     <meta property="og:site_name" content="TeamKART" />
     <meta property="fb:admins" content="lithium03.nidhin" />
     <meta property="fb:admins" content="ketanpmundhra" />
+    <meta property="fb:app_id" content="1670301563258392">
     <meta property="og:image" content="http://www.teamkart.in/posts/intake-5-7-2015/banner.jpg">
     <meta property="og:url" content="http://www.teamkart.in/posts/intake-5-7-2015/" />
     <meta property="og:description" content="Rohan Chaturvedi, junior Engine team member, writes on intake tuning and how it compares to other resonance phenomena in nature." />
@@ -34,13 +35,22 @@
 <body>
     <div id="fb-root"></div>
     <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1670301563258392',
+                xfbml: true,
+                version: 'v2.3'
+            });
+        };
+
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
+            if (d.getElementById(id)) { return; }
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+            js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <header id="header">
         <div class="logo">
             <div>
