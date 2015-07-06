@@ -54,7 +54,7 @@ function loadData() {
     if (last === -1) {
         d = new Date();
         d.getTime();
-        last = datetoNumber(d);
+        last = String(datetoNumber(d)-4);
         setCookie('last', last, 10);
     }
 }
