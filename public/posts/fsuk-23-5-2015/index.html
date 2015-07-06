@@ -13,6 +13,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/colors.css" rel="stylesheet" type="text/css">
     <link href="css/colorbox.css" rel="stylesheet" type="text/css">
+    <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
     <link href="css/media.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/modernizr.js"></script>
     <!--[if lt IE 9]>
@@ -151,6 +152,32 @@
 
             </section>
             <section class="rightcontainer">
+                <a id="sub-super" href="#sub" class="popup-with-zoom-anim button" style="margin:10px;">Subscribe for updates</a>
+                <div id="sub" class="teamlist-popup zoom-anim-dialog mfp-hide">
+                    <h3>Subscribe to recieve updates every month!</h3>
+                    <p>We never spam or share your credentials with a third party :)</p>
+                    <p><a id="errorMessage"></a></p>
+                    <form id="subForm">
+                        <input type="email" name="subEmail" required="required" id="senderEmail" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" placeholder="user@domain.com" />
+                        <div class="g-recaptcha" style="margin-top:10px;" data-sitekey="6Le5ZAcTAAAAAAbuLZKg3rceEvwoZh0IQRV49WEX"></div>
+                        <div>
+                            <input type="submit" id="sendMessage" name="sendMessage" class="button" value="Confirm" style="display:inline-block;margin-top:0;" />
+                            <img id="progress" src="/images/progress.gif" />
+                        </div>
+                        <input type="checkbox" id="hidePopupCheck" name="hidePopup" style="margin-top:10px;" onchange="popupBlock();">Don't pop up again
+                        <style>
+                            #progress {
+                                width: auto;
+                                height: 100%;
+                                opacity: 0;
+                                margin: 0;
+                                position: relative;
+                                top: 13px;
+                                display: inline-block;
+                            }
+                        </style>
+                    </form>
+                </div>
                 <div class="sidebarbox">
                     <div class="sidebarbox-title">
                         <h3>Gallery</h3>
@@ -278,6 +305,9 @@
     <script type="text/javascript" src="js/backstretch.js"></script>
     <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/cookiecontrol.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript">
         jQuery(window).load(function () {
             "use strict";
