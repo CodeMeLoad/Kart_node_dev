@@ -20,8 +20,8 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.post('/message/', function (req, res) {
     verifyRecaptcha(req.body["captcha"], function (success)
     {
-        if (!success) ;
-           // res.send('1');
+        if (!success)
+            res.send('1');
         else
         {
             transporter = nodemailer.createTransport(
@@ -53,7 +53,7 @@ app.post('/message/', function (req, res) {
             }
             else
             {
-                reply = require( 'htmlMail.min.html' );
+                reply = require( './htmlMail.min.html' );
                 messageReply =
                     {
                         subject: 'Successfully subscribed to TeamKART',
@@ -71,7 +71,7 @@ app.post('/message/', function (req, res) {
                     message.to = mailList[i];
                     transporter.sendMail(message);
                 }
-                transporter.sendMail( messageReply );
+                //transporter.sendMail( messageReply );
             }
             res.send('0');
         }
