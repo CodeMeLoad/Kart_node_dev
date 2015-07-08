@@ -71,7 +71,7 @@ app.post('/message/', function (req, res) {
                     message.to = mailList[i];
                     transporter.sendMail(message);
                 }
-                //transporter.sendMail( messageReply );
+                transporter.sendMail( messageReply );
             }
             res.send('0');
         }
