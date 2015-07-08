@@ -20,8 +20,8 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.post('/message/', function (req, res) {
     verifyRecaptcha(req.body["captcha"], function (success)
     {
-        if (!success) 
-            res.send('1');
+        if (!success) ;
+           // res.send('1');
         else
         {
             transporter = nodemailer.createTransport(
