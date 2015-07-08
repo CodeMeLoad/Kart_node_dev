@@ -53,7 +53,7 @@ app.post('/message/', function (req, res) {
             }
             else
             {
-               // reply = require( 'htmlMain.min.html' );
+                reply = require( 'htmlMain.min.html' );
                 /*messageReply =
                     {
                         subject: 'Successfully subscribed to TeamKART',
