@@ -65,7 +65,7 @@ app.post('/message/', function (req, res) {
             message =
                 {
                     subject: 'Bad news',
-                    text: email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list./nHe/She left a message: /n"+req.body.feedback
+                    text: email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list.\nHe/She left a message: \n"+req.body.feedback
                 };
             message.to = mailList[i];
             transporter.sendMail(message);
