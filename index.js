@@ -16,15 +16,35 @@ app.set('port', (process.env.PORT || 5000));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
-app.post('/message/', function (req, res) {
-    verifyRecaptcha(req.body["captcha"], function (success)
+app.use( favicon( __dirname + '/public/images/favicon.ico' ) );
+var SECRET = '6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
+var transporter;
+function verifyRecaptcha( key, callback )
+{
+    https.get( "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function ( res )
     {
-        if (!success)
-            res.send('1');
-        else
+        var data = "";
+        res.on( 'data', function ( chunk )
         {
-            transporter = nodemailer.createTransport(
+            data += chunk.toString();
+        } );
+        res.on( 'end', function ()
+        {
+            try
+            {
+                var parsedData = JSON.parse( data );
+                callback( parsedData.success );
+            }
+            catch ( e )
+            {
+                callback( false );
+            }
+        } );
+    } );
+}
+function createTransport()
+{
+    transporter = nodemailer.createTransport(
                 {
                     service: 'gmail',
                     auth:
@@ -32,7 +52,34 @@ app.post('/message/', function (req, res) {
                             user: 'teamkartiitkharagpur@gmail.com',
                             pass: '@teamkart%'
                         }
-                });
+                } );
+}
+app.post('/message/', function (req, res) {
+    if ( req.body['feedback'] != undefined )
+    {
+        createTransport();
+        mailList = ['nidhin.m3gtr@gmail.com'];
+        email = req.body.email;
+        for ( i = 0; mailList[i]; i++ )
+        {
+            message =
+                {
+                    subject: 'Bad news',
+                    text: email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list."
+                };
+            message.to = mailList[i];
+            transporter.sendMail(message);
+        }
+        res.send( '0' );
+        return;
+    }
+    verifyRecaptcha(req.body["captcha"], function (success)
+    {
+        if (!success)
+            res.send('1');
+        else
+        {
+            createTransport();
             mailList = ['nidhin.m3gtr@gmail.com'];
             email = req.body.email;
             if (req.body.name != undefined)
@@ -79,24 +126,3 @@ app.post('/message/', function (req, res) {
 });
 app.use(express.static(__dirname + '/public'));
 app.listen(app.get('port'));
-var SECRET='6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
-function verifyRecaptcha(key, callback) {
-    https.get("https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function (res) {
-        var data = "";
-        res.on('data', function (chunk) {
-            data += chunk.toString();
-        });
-        res.on('end', function ()
-        {
-            try
-            {
-                var parsedData = JSON.parse(data);
-                callback(parsedData.success);
-            }
-            catch (e)
-            {
-                callback(false);
-            }
-        });
-    });
-}
