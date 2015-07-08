@@ -107,20 +107,33 @@ app.post('/message/', function (req, res) {
                     {
                         subject: 'Successfully subscribed to TeamKART',
                         to: email,
+                        from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
                         html: reply
                     };
-                
-                for ( i = 0; mailList[i]; i++ )
+                transporter.sendMail( messageReply, function ( error, response )
                 {
-                    message =
+                    if ( error )
+                    {
+                        res.send( '0' );
+                    }
+                    response.statusHandler.once( "failed", function ( data )
+                    {
+                        res.send( '0' );
+                    } );
+                    response.statusHandler.once( "sent", function ( data )
+                    {
+                        for ( i = 0; mailList[i]; i++ )
                         {
-                            subject: 'New blog subscriber at teamkart.in',
-                            text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
-                        };
-                    message.to = mailList[i];
-                    transporter.sendMail(message);
-                }
-                transporter.sendMail( messageReply );
+                            message =
+                                {
+                                    subject: 'New blog subscriber at teamkart.in',
+                                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
+                                };
+                            message.to = mailList[i];
+                            transporter.sendMail( message );
+                        }
+                    } );
+                } );                
             }
             res.send('0');
         }
