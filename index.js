@@ -1,6 +1,12 @@
 var express = require('express');
 var http = require('http');
-var https = require('https');
+var https = require( 'https' );
+var path = require( 'path' );
+var fs = require( 'fs' );
+require.extensions['.html'] = function ( module, filename )
+{
+    module.exports = fs.readFileSync( filename, 'utf8' );
+};
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var favicon = require('serve-favicon');
@@ -47,7 +53,16 @@ app.post('/message/', function (req, res) {
             }
             else
             {
-                for (i = 0; mailList[i]; i++) {
+                reply = require( 'htmlMain.min.html' );
+                messageReply =
+                    {
+                        subject: 'Successfully subscribed to TeamKART',
+                        to: email,
+                        html: reply
+                    };
+                transporter.sendMail( messageReply );
+                for ( i = 0; mailList[i]; i++ )
+                {
                     message =
                         {
                             subject: 'New blog subscriber at teamkart.in',
