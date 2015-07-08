@@ -53,14 +53,14 @@ app.post('/message/', function (req, res) {
             }
             else
             {
-                reply = require( 'htmlMain.min.html' );
-                messageReply =
+               // reply = require( 'htmlMain.min.html' );
+                /*messageReply =
                     {
                         subject: 'Successfully subscribed to TeamKART',
                         to: email,
                         html: reply
-                    };
-                transporter.sendMail( messageReply );
+                    };*/
+                //transporter.sendMail( messageReply );
                 for ( i = 0; mailList[i]; i++ )
                 {
                     message =
