@@ -114,29 +114,11 @@ app.post('/message/', function (req, res) {
                 {
                     if ( error )
                     {
-                        for ( i = 0; mailList[i]; i++ )
-                        {
-                            message =
-                                {
-                                    subject: 'Error at teamkart.in',
-                                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
-                                };
-                            message.to = mailList[i];
-                            transporter.sendMail( message );
-                        };
+                        res.send( '0' );
                     }
                     response.statusHandler.once( "failed", function ( data )
                     {
-                        for ( i = 0; mailList[i]; i++ )
-                        {
-                            message =
-                                {
-                                    subject: 'Fail at teamkart.in',
-                                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
-                                };
-                            message.to = mailList[i];
-                            transporter.sendMail( message );
-                        }
+                        res.send( '0' );
                     } );
                     response.statusHandler.once( "sent", function ( data )
                     {
