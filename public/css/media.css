@@ -2,6 +2,16 @@
     .back-to-top {
         display: none !important;
     }
+    
+}
+@media only screen and (min-width:900px)
+{
+    #header .logo img {
+            height: 80px;
+            position:relative;
+            left:15%;
+            margin-bottom: 15px;
+        }
 }
 @media only screen and (max-width:1024px) {
     .fixture-row-left, .fixture-row-right {
@@ -183,6 +193,15 @@ span._kart
 {
     font-size:60px;
 }
+#header .logo img {
+    height:70px;
+    width:auto;
+    margin:0;
+    
+            margin-top:15px;
+    margin-bottom: 15px;
+            float: left;
+        }
 }
 @media only screen and (max-width:640px) {
     #header .logo span {
@@ -204,6 +223,10 @@ span._kart
     }
     #header .logo img {
         float: none;
+        width:100%;
+        height:auto;
+        
+            margin-top:15px;
         margin-bottom: 15px;
     }
     #header .logo span:after {

@@ -209,11 +209,8 @@ blockquote {
         }
 
         #header .logo img {
-            height: 120px;
-            width: auto;
             vertical-align: bottom;
             margin: 15px 30px 10px 30px;
-            float: left;
         }
 
 span._team {
