@@ -54,21 +54,72 @@ function createTransport()
                         }
                 } );
 }
-app.post('/message/', function (req, res) {
-    if ( req.body['feedback'] != undefined )
+function encrypt( text, key )
+{
+    var cipher = crypto.createCipher( 'aes-256-cbc', key )
+    var crypted = cipher.update( text, 'utf8', 'hex' )
+    crypted += cipher.final( 'hex' );
+    return crypted;
+}
+function decrypt( text, key )
+{
+    var decipher = crypto.createDecipher( 'aes-256-cbc', key )
+    var dec = decipher.update( text, 'hex', 'utf8' )
+    dec += decipher.final( 'utf8' );
+    return dec;
+}
+app.post( '/message/', function ( req, res )
+{
+    if ( req.body.a != undefined && req.body.b != undefined )
     {
+        a = req.body.a;
+        b = req.body.b;
+        a = decrypt( a, "34ed5rf6t7y8" );
+        b = decrypt( a, "pqo30v763459r0" );
+        if ( a != b )
+        {
+            res.send( '0' );
+            return;
+        }
+        email = a;
         createTransport();
         mailList = ['nidhin.m3gtr@gmail.com'];
-        email = req.body.email;
+        reply = require( './htmlMail.min.html' );
+        messageReply =
+            {
+                subject: 'Successfully subscribed to TeamKART',
+                to: email,
+                from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
+                html: reply
+            };
+        transporter.sendMail( messageReply );
+        for ( i = 0; mailList[i]; i++ )
+        {
+            message =
+                {
+                    subject: 'New blog subscriber at teamkart.in',
+                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
+                };
+            message.to = mailList[i];
+            transporter.sendMail( message );
+        }
+        res.send( '0' );
+        return;
+    }
+    if ( req.body['feedback'] != undefined )
+    {
+        email = req.body.email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list.";
+        if ( req.body.feedback != "" )
+            email = email + "\nHe/She left a message:\n" + req.body.feedback;
+        createTransport();
+        mailList = ['nidhin.m3gtr@gmail.com'];
         for ( i = 0; mailList[i]; i++ )
         {
             message =
                 {
                     subject: 'Bad news',
-                    text: email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list."
+                    text: email 
                 };
-            if ( req.body.feedback != "" )
-                message.text = message.text + "\nHe/She left a message:\n" + req.body.feedback;
             message.to = mailList[i];
             transporter.sendMail(message);
         }
@@ -81,63 +132,52 @@ app.post('/message/', function (req, res) {
             res.send('1');
         else
         {
+            email = req.body.email;
             createTransport();
             mailList = ['nidhin.m3gtr@gmail.com'];
-            email = req.body.email;
-            if (req.body.name != undefined)
+            if ( req.body.name != undefined )
             {
                 name = req.body.name;
                 phone = req.body.phone;
                 message = req.body.message;
+                body=name + ' says: \n\n\t"' + message + '"';
+                if ( email != "" || phone != "" )
+                    body = body + '\n\nContact Info:\n';
+                if ( email != "" )
+                    body = body + 'Email: ' + email;
+                if ( phone != "" )
+                    body = body + '\nPhone: ' + phone;
                 for (i = 0; mailList[i]; i++)
                 {
-                    message =
+                    messageSend =
                         {
                             subject: 'New message at teamkart.in from ' + name,
-                            text: name + ' says: \n\n\t"' + message + '"\n\nContact Info:\nEmail: ' + email + '\nPhone: ' + phone
+                            text: body
                         };
                     message.to = mailList[i];
-                    transporter.sendMail(message);
+                    transporter.sendMail(messageSend);
                 }
             }
             else
             {
-                reply = require( './htmlMail.min.html' );
+                reply = require( './verifyMail.min.html' );
+                a = encrypt( email, "34ed5rf6t7y8" );
+                b = encrypt( email, "pqo30v763459r0" );
+                r = 'http://www.teamkart.in/confirm/index.html?a=' + a + '&b=' + b;
+                c = reply.indexOf( 'ADD23' );
+                reply = reply.slice( 0, c ) + r + reply.slice( c + 4, reply.length );
                 messageReply =
                     {
-                        subject: 'Successfully subscribed to TeamKART',
+                        subject: 'Confirm TeamKART subscription',
                         to: email,
                         from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
                         html: reply
                     };
-                transporter.sendMail( messageReply, function ( error, response )
-                {
-                    if ( error )
-                    {
-                        res.send( '0' );
-                    }
-                    response.statusHandler.once( "failed", function ( data )
-                    {
-                        res.send( '0' );
-                    } );
-                    response.statusHandler.once( "sent", function ( data )
-                    {
-                        for ( i = 0; mailList[i]; i++ )
-                        {
-                            message =
-                                {
-                                    subject: 'New blog subscriber at teamkart.in',
-                                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
-                                };
-                            message.to = mailList[i];
-                            transporter.sendMail( message );
-                        }
-                    } );
-                } );                
+                transporter.sendMail( messageReply );
             }
-            res.send('0');
+            res.send( '0' );
         }
     });
 });
 app.use(express.static(__dirname + '/public'));
-app.listen(app.get('port'));
+app.listen( app.get( 'port' ) );
