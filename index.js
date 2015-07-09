@@ -43,15 +43,13 @@ function verifyRecaptcha( key, callback )
 }
 function createTransport()
 {
-    transporter = nodemailer.createTransport(
-                {
-                    service: 'gmail',
-                    auth:
-                        {
-                            user: 'teamkartiitkharagpur@gmail.com',
-                            pass: '@teamkart%'
-                        }
-                } );
+    transporter = nodemailer.createTransport( {
+        service: 'gmail',
+        auth: {
+            user: 'teamkartiitkharagpur@gmail.com',
+            pass: '@teamkart%'
+        }
+    } );
     return transporter;
 }
 function encrypt( text, key )
@@ -83,21 +81,19 @@ app.post( '/message/', function ( req, res )
         transporter = createTransport();
         mailList = ['nidhin.m3gtr@gmail.com'];
         reply = require( './htmlMail.min.html' );
-        messageReply =
-            {
-                subject: 'Successfully subscribed to TeamKART',
-                to: email,
-                from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
-                html: reply
-            };
+        messageReply = {
+            subject: 'Successfully subscribed to TeamKART',
+            to: email,
+            from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
+            html: reply
+        };
         transporter.sendMail( messageReply );
         for ( i = 0; mailList[i]; i++ )
         {
-            message =
-                {
-                    subject: 'New blog subscriber at teamkart.in',
-                    text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
-                };
+            message = {
+                subject: 'New blog subscriber at teamkart.in',
+                text: email + ' wants to follow TeamKART. Add this entry to the mailing list.'
+            };
             message.to = mailList[i];
             transporter.sendMail( message );
         }
@@ -113,11 +109,10 @@ app.post( '/message/', function ( req, res )
         mailList = ['nidhin.m3gtr@gmail.com'];
         for ( i = 0; mailList[i]; i++ )
         {
-            message =
-                {
-                    subject: 'Bad news',
-                    text: email 
-                };
+            message = {
+                subject: 'Bad news',
+                text: email
+            };
             message.to = mailList[i];
             transporter.sendMail(message);
         }
@@ -147,11 +142,10 @@ app.post( '/message/', function ( req, res )
                     body = body + '\nPhone: ' + phone;
                 for (i = 0; mailList[i]; i++)
                 {
-                    messageSend =
-                        {
-                            subject: 'New message at teamkart.in from ' + name,
-                            text: body
-                        };
+                    messageSend = {
+                        subject: 'New message at teamkart.in from ' + name,
+                        text: body
+                    };
                     messageSend.to = mailList[i];
                     transporter.sendMail(messageSend);
                 }
