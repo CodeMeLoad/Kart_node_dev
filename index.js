@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( favicon( __dirname + '/public/images/favicon.ico' ) );
 var SECRET = '6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
-var transporter;
 function verifyRecaptcha( key, callback )
 {
     https.get( "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function ( res )
@@ -71,7 +70,7 @@ function decrypt( text, key )
 }
 app.post( '/message/', function ( req, res )
 {
-    if ( req.body.a != undefined && req.body.b != undefined )
+    if ( req.body['a'] != undefined && req.body['b'] != undefined )
     {
         a = decrypt( req.body.a, "34ed5rf6t7y8" );
         b = decrypt( req.body.b, "pqo30v763459r0" );
@@ -153,7 +152,7 @@ app.post( '/message/', function ( req, res )
                             subject: 'New message at teamkart.in from ' + name,
                             text: body
                         };
-                    message.to = mailList[i];
+                    messageSend.to = mailList[i];
                     transporter.sendMail(messageSend);
                 }
             }
