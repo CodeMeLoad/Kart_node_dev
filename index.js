@@ -53,6 +53,7 @@ function createTransport()
                             pass: '@teamkart%'
                         }
                 } );
+    return transporter;
 }
 function encrypt( text, key )
 {
@@ -72,17 +73,15 @@ app.post( '/message/', function ( req, res )
 {
     if ( req.body.a != undefined && req.body.b != undefined )
     {
-        a = req.body.a;
-        b = req.body.b;
-        a = decrypt( a, "34ed5rf6t7y8" );
-        b = decrypt( a, "pqo30v763459r0" );
+        a = decrypt( req.body.a, "34ed5rf6t7y8" );
+        b = decrypt( req.body.b, "pqo30v763459r0" );
         if ( a != b )
         {
             res.send( '0' );
             return;
         }
         email = a;
-        createTransport();
+        transporter = createTransport();
         mailList = ['nidhin.m3gtr@gmail.com'];
         reply = require( './htmlMail.min.html' );
         messageReply =
@@ -111,7 +110,7 @@ app.post( '/message/', function ( req, res )
         email = req.body.email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list.";
         if ( req.body.feedback != "" )
             email = email + "\nHe/She left a message:\n" + req.body.feedback;
-        createTransport();
+        transporter = createTransport();
         mailList = ['nidhin.m3gtr@gmail.com'];
         for ( i = 0; mailList[i]; i++ )
         {
@@ -133,7 +132,7 @@ app.post( '/message/', function ( req, res )
         else
         {
             email = req.body.email;
-            createTransport();
+            transporter = createTransport();
             mailList = ['nidhin.m3gtr@gmail.com'];
             if ( req.body.name != undefined )
             {
