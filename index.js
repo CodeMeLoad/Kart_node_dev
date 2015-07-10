@@ -9,7 +9,8 @@ require.extensions['.html'] = function ( module, filename )
 };
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var favicon = require('serve-favicon');
+var favicon = require( 'serve-favicon' );
+var crypto = require( 'crypto' );
 var compression = require('compression');
 var app = express();
 app.set('port', (process.env.PORT || 5000));
@@ -100,7 +101,7 @@ app.post( '/message/', function ( req, res )
         res.send( '0' );
         return;
     }
-    if ( req.body['feedback'] != undefined )
+    else if ( req.body['feedback'] != undefined )
     {
         email = req.body.email + " doesn't want to recieve mails anymore. Remove this entry from the mailing list.";
         if ( req.body.feedback != "" )
@@ -119,57 +120,60 @@ app.post( '/message/', function ( req, res )
         res.send( '0' );
         return;
     }
-    verifyRecaptcha(req.body["captcha"], function (success)
+    else if(req.body['captcha'] != undefined )
     {
-        if (!success)
-            res.send('1');
-        else
+        verifyRecaptcha( req.body.captcha, function ( success )
         {
-            email = req.body.email;
-            transporter = createTransport();
-            mailList = ['nidhin.m3gtr@gmail.com'];
-            if ( req.body.name != undefined )
-            {
-                name = req.body.name;
-                phone = req.body.phone;
-                message = req.body.message;
-                body=name + ' says: \n\n\t"' + message + '"';
-                if ( email != "" || phone != "" )
-                    body = body + '\n\nContact Info:\n';
-                if ( email != "" )
-                    body = body + 'Email: ' + email;
-                if ( phone != "" )
-                    body = body + '\nPhone: ' + phone;
-                for (i = 0; mailList[i]; i++)
-                {
-                    messageSend = {
-                        subject: 'New message at teamkart.in from ' + name,
-                        text: body
-                    };
-                    messageSend.to = mailList[i];
-                    transporter.sendMail(messageSend);
-                }
-            }
+            if ( !success )
+                res.send( '1' );
             else
             {
-                reply = require( './verifyMail.min.html' );
-                a = encrypt( email, "34ed5rf6t7y8" );
-                b = encrypt( email, "pqo30v763459r0" );
-                r = 'http://www.teamkart.in/confirm/index.html?a=' + a + '&b=' + b;
-                c = reply.indexOf( 'ADD23' );
-                reply = reply.slice( 0, c ) + r + reply.slice( c + 4, reply.length );
-                messageReply =
+                email = req.body.email;
+                transporter = createTransport();
+                mailList = ['nidhin.m3gtr@gmail.com'];
+                if ( req.body.name != undefined )
+                {
+                    name = req.body.name;
+                    phone = req.body.phone;
+                    message = req.body.message;
+                    body = name + ' says: \n\n\t"' + message + '"';
+                    if ( email != "" || phone != "" )
+                        body = body + '\n\nContact Info:\n';
+                    if ( email != "" )
+                        body = body + 'Email: ' + email;
+                    if ( phone != "" )
+                        body = body + '\nPhone: ' + phone;
+                    for ( i = 0; mailList[i]; i++ )
                     {
-                        subject: 'Confirm TeamKART subscription',
-                        to: email,
-                        from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
-                        html: reply
-                    };
-                transporter.sendMail( messageReply );
+                        messageSend = {
+                            subject: 'New message at teamkart.in from ' + name,
+                            text: body
+                        };
+                        messageSend.to = mailList[i];
+                        transporter.sendMail( messageSend );
+                    }
+                }
+                else
+                {
+                    reply = require( './verifyMail.min.html' );
+                    a = encrypt( email, "34ed5rf6t7y8" );
+                    b = encrypt( email, "pqo30v763459r0" );
+                    r = 'http://www.teamkart.in/confirm/index.html?a=' + a + '&b=' + b;
+                    c = reply.indexOf( 'ADD23' );
+                    reply = reply.slice( 0, c ) + r + reply.slice( c + 4, reply.length );
+                    messageReply =
+                        {
+                            subject: 'Confirm TeamKART subscription',
+                            to: email,
+                            from: 'TeamKART <teamkartiitkharagpur@gmail.com>',
+                            html: reply
+                        };
+                    transporter.sendMail( messageReply );
+                }
+                res.send( '0' );
             }
-            res.send( '0' );
-        }
-    });
+        } );
+    }
 });
 app.use(express.static(__dirname + '/public'));
 app.listen( app.get( 'port' ) );
