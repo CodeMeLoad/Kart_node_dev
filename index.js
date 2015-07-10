@@ -158,7 +158,7 @@ app.post( '/message/', function ( req, res )
                     reply = require( './verifyMail.min.html' );
                     a = encrypt( email, "34ed5rf6t7y8" );
                     b = encrypt( email, "pqo30v763459r0" );
-                    r = 'http://www.teamkart.in/confirm/index.html?a=' + a + '&b=' + b;
+                    r = 'http://www.teamkart.in/confirm.html?a=' + a + '&b=' + b;
                     c = reply.indexOf( 'ADD23' );
                     reply = reply.slice( 0, c ) + r + reply.slice( c + 4, reply.length );
                     messageReply =
