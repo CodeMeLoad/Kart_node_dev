@@ -19,8 +19,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( favicon( __dirname + '/public/images/favicon.ico' ) );
 var SECRET = '6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
+var mailList = ['nidhin.m3gtr@gmail.com'];
 function verifyRecaptcha( key, callback )
 {
+    //
+    callback( true );
+    return;
+    //
     https.get( "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function ( res )
     {
         var data = "";
@@ -62,10 +67,17 @@ function encrypt( text, key )
 }
 function decrypt( text, key )
 {
-    var decipher = crypto.createDecipher( 'aes-256-cbc', key )
-    var dec = decipher.update( text, 'hex', 'utf8' )
-    dec += decipher.final( 'utf8' );
-    return dec;
+    var decipher = crypto.createDecipher( 'aes-256-cbc', key );
+    try
+    {
+        var dec = decipher.update( text, 'hex', 'utf8' )
+        dec += decipher.final( 'utf8' );
+        return dec;
+    } catch ( e )
+    {
+        console.log( 'fail' );
+        return;
+    }
 }
 app.post( '/message/', function ( req, res )
 {
@@ -80,7 +92,6 @@ app.post( '/message/', function ( req, res )
         }
         email = a;
         transporter = createTransport();
-        mailList = ['nidhin.m3gtr@gmail.com'];
         reply = require( './htmlMail.min.html' );
         messageReply = {
             subject: 'Successfully subscribed to TeamKART',
@@ -107,7 +118,6 @@ app.post( '/message/', function ( req, res )
         if ( req.body.feedback != "" )
             email = email + "\nHe/She left a message:\n" + req.body.feedback;
         transporter = createTransport();
-        mailList = ['nidhin.m3gtr@gmail.com'];
         for ( i = 0; mailList[i]; i++ )
         {
             message = {
@@ -130,7 +140,6 @@ app.post( '/message/', function ( req, res )
             {
                 email = req.body.email;
                 transporter = createTransport();
-                mailList = ['nidhin.m3gtr@gmail.com'];
                 if ( req.body.name != undefined )
                 {
                     name = req.body.name;
@@ -160,7 +169,7 @@ app.post( '/message/', function ( req, res )
                     b = encrypt( email, "pqo30v763459r0" );
                     r = 'http://www.teamkart.in/confirm.html?a=' + a + '&b=' + b;
                     c = reply.indexOf( 'ADD23' );
-                    reply = reply.slice( 0, c ) + r + reply.slice( c + 4, reply.length );
+                    reply = reply.slice( 0, c ) + r + reply.slice( c + 5, reply.length );
                     messageReply =
                         {
                             subject: 'Confirm TeamKART subscription',
