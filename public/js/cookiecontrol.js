@@ -32,7 +32,7 @@ function progress() {
 }
 function done() {
     $('#progress').css('opacity', '0');
-    $('#errorMessage').html('You have been subscribed!!');
+    $('#errorMessage').html('Check your email for the confirmation link!!');
     setTimeout(function () {
         $('button[title="Close (Esc)"').click();
     }, 2000);
