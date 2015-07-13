@@ -187,7 +187,7 @@ app.post( '/message/', function ( req, res )
 app.use( express.static( __dirname + '/public' ) );
 app.get( '*', function ( req, res )
 {
-    page404 = require( './public/404.html' );
+    page404 = require( './404.html' );
     res.status( 404 ).send( page404 );
 } );
 app.listen( app.get( 'port' ) );
