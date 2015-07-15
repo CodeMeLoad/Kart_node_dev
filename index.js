@@ -9,7 +9,6 @@ require.extensions['.html'] = function ( module, filename )
 };
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var favicon = require( 'serve-favicon' );
 var crypto = require( 'crypto' );
 var compression = require('compression');
 var app = express();
@@ -17,7 +16,6 @@ app.set('port', (process.env.PORT || 5000));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use( favicon( __dirname + '/public/images/favicon.ico' ) );
 var SECRET = '6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
 var mailList = ['nidhin.m3gtr@gmail.com'];
 function verifyRecaptcha( key, callback )
