@@ -21,11 +21,7 @@ var PASSWORD = ( process.env.PASSWORD || require( './password.html' ) );
 var mailList = ['nidhin.m3gtr@gmail.com'];
 function verifyRecaptcha( key, callback )
 {
-    //
-    callback( true );
-    return;
-    //
-    https.get( "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function ( res )
+	https.get( "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET + "&response=" + key, function ( res )
     {
         var data = "";
         res.on( 'data', function ( chunk )
