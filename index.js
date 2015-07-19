@@ -15,8 +15,9 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 app.use(compression());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-var SECRET = '6Le5ZAcTAAAAAFuILlE2DZ7CCiPJqn67Q5R5NVUD';
+app.use( bodyParser.urlencoded( { extended: false } ) );
+var SECRET = ( process.env.RECAPTCHA || require( './recaptchasecret.html' ) );
+var PASSWORD = ( process.env.PASSWORD || require( './password.html' ) );
 var mailList = ['nidhin.m3gtr@gmail.com'];
 function verifyRecaptcha( key, callback )
 {
@@ -51,7 +52,7 @@ function createTransport()
         service: 'gmail',
         auth: {
             user: 'teamkartiitkharagpur@gmail.com',
-            pass: '@teamkart%'
+            pass: PASSWORD
         }
     } );
     return transporter;

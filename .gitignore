@@ -29,6 +29,9 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
+recaptchasecret.html
+password.html
+
 # Thumbnails
 ._*
 
@@ -42,3 +45,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.log
