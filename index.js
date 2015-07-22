@@ -18,6 +18,9 @@ app.use(bodyParser.json());
 app.use( bodyParser.urlencoded( { extended: false } ) );
 var SECRET = ( process.env.RECAPTCHA || require( './recaptchasecret.html' ) );
 var PASSWORD = ( process.env.PASSWORD || require( './password.html' ) );
+var KEYS = [];
+KEYS[0] = ( process.env.ENC0 || '34ed5rf6t7y8' );
+KEYS[1] = ( process.env.ENC1 || 'pqo30v763459r0' );
 var mailList = ['nidhin.m3gtr@gmail.com'];
 function verifyRecaptcha( key, callback )
 {
@@ -78,8 +81,8 @@ app.post( '/message/', function ( req, res )
 {
     if ( req.body['a'] != undefined && req.body['b'] != undefined )
     {
-        a = decrypt( req.body.a, "34ed5rf6t7y8" );
-        b = decrypt( req.body.b, "pqo30v763459r0" );
+        a = decrypt( req.body.a, KEYS[0] );
+        b = decrypt( req.body.b, KEYS[1] );
         if ( a != b )
         {
             res.send( '0' );
@@ -160,8 +163,8 @@ app.post( '/message/', function ( req, res )
                 else
                 {
                     reply = require( './verifyMail.min.html' );
-                    a = encrypt( email, "34ed5rf6t7y8" );
-                    b = encrypt( email, "pqo30v763459r0" );
+                    a = encrypt( email, KEYS[0] );
+                    b = encrypt( email, KEYS[1] );
                     r = 'http://www.teamkart.in/confirm.html?a=' + a + '&b=' + b;
                     c = reply.indexOf( 'ADD23' );
                     reply = reply.slice( 0, c ) + r + reply.slice( c + 5, reply.length );
